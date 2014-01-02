@@ -1,6 +1,6 @@
 # ngraph
 
-Ngraph is a collection of graph related algorithms. It can be used in a browser
+Ngraph is a set of graph related algorithms. It can be used in a browser
 or on the server side. This repository is a collection of examples, which show
 how to use some of them.
 

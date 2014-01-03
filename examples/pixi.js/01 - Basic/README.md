@@ -28,3 +28,7 @@ namespace:
 // It creates a grid-graph, with 40 columns and 40 rows
 var graph = ngraph.createGraph.grid(40, 40);
 ```
+
+Final result is animation of 800 nodes graph:
+
+![final result](https://raw.github.com/anvaka/ngraph/master/examples/pixi.js/01%20-%20Basic/media/Result.png)

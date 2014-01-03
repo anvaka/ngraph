@@ -1,6 +1,6 @@
-This is a really basic setup to render graph with PIXI.js
+# Basic rendering with PIXI
 
-This examples uses:
+This example uses:
 
 * [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout) - For this example we will require layout algorithm;
 * [ngraph.generators](https://github.com/anvaka/ngraph.generators) -  Graph generators, to create a predefined graph;

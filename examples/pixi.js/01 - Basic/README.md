@@ -3,9 +3,8 @@
 This example uses:
 
 * [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout) - Force directed layout algorithm;
-* [ngraph.physics.simulator](https://github.com/anvaka/ngraph.physics.simulator) - To adjust force directed layout
+* [ngraph.physics.simulator](https://github.com/anvaka/ngraph.physics.simulator) - To adjust force directed layout;
 * [ngraph.generators](https://github.com/anvaka/ngraph.generators) -  Graph generators, to create a predefined graph;
- arguments
 
 All these modules are exported inside `index.js` file:
 

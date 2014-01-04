@@ -1,10 +1,10 @@
-This is a really basic setup to render graph with PIXI.js
+# Basic rendering with PIXI
 
-This examples uses:
+This example uses:
 
-* [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout) - For this example we will require layout algorithm;
+* [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout) - Force directed layout algorithm;
+* [ngraph.physics.simulator](https://github.com/anvaka/ngraph.physics.simulator) - To adjust force directed layout;
 * [ngraph.generators](https://github.com/anvaka/ngraph.generators) -  Graph generators, to create a predefined graph;
-* [ngraph.physics.simulator](https://github.com/anvaka/ngraph.physics.simulator) - To adjust force directed layout arguments
 
 All these modules are exported inside `index.js` file:
 
@@ -28,3 +28,7 @@ namespace:
 // It creates a grid-graph, with 40 columns and 40 rows
 var graph = ngraph.createGraph.grid(40, 40);
 ```
+
+Final result is animation of 800 nodes graph:
+
+![final result](https://raw.github.com/anvaka/ngraph/master/examples/pixi.js/01%20-%20Basic/media/Result.png)

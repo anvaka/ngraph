@@ -10,8 +10,10 @@ module.exports = function (graphics) {
 
   function zoom(x, y, isZoomIn) {
     direction = isZoomIn ? 1 : -1;
-    graphGraphics.scale.x *= (1 + direction * 0.1);
-    graphGraphics.scale.y *= (1 + direction * 0.1);
+    var factor = (1 + direction * 0.1);
+
+    graphGraphics.scale.x *= factor;
+    graphGraphics.scale.y *= factor;
   }
 
   function addDragNDrop() {

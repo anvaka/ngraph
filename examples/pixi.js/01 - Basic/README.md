@@ -4,7 +4,11 @@ This examples shows how to render 800 nodes graph with PIXI and `ngraph`. Our fi
 
 ![final result](https://raw.github.com/anvaka/ngraph/master/examples/pixi.js/01%20-%20Basic/media/Result.png)
 
-Example uses:
+You can see live example here: [01 - Basic](http://anvaka.github.io/ngraph/examples/pixi.js/01%20-%20Basic/).
+
+# How it's made?
+
+Example uses these npm modules:
 
 * [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout) - Force directed layout algorithm;
 * [ngraph.physics.simulator](https://github.com/anvaka/ngraph.physics.simulator) - To adjust force directed layout;

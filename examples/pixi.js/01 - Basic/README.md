@@ -1,6 +1,10 @@
 # Basic rendering with PIXI
 
-This example uses:
+This examples shows how to render 800 nodes graph with PIXI and `ngraph`. Our final result is:
+
+![final result](https://raw.github.com/anvaka/ngraph/master/examples/pixi.js/01%20-%20Basic/media/Result.png)
+
+Example uses:
 
 * [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout) - Force directed layout algorithm;
 * [ngraph.physics.simulator](https://github.com/anvaka/ngraph.physics.simulator) - To adjust force directed layout;
@@ -29,6 +33,3 @@ namespace:
 var graph = ngraph.createGraph.grid(40, 40);
 ```
 
-Final result is animation of 800 nodes graph:
-
-![final result](https://raw.github.com/anvaka/ngraph/master/examples/pixi.js/01%20-%20Basic/media/Result.png)

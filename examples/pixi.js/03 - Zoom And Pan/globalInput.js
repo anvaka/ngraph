@@ -3,7 +3,7 @@ module.exports = function (graphics) {
   var graphGraphics = graphics.graphGraphics;
 
   addWheelListener(graphics.domContainer, function (e) {
-    zoom(e.clientX, e.clientY, e.wheelDelta > 0);
+    zoom(e.clientX, e.clientY, e.deltaY < 0);
   });
 
   addDragNDrop();

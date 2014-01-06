@@ -19,7 +19,7 @@ Let's look at `index.html`:
 </html>
 ```
 
-It invokes `ngraph.main()` function, which is the only export of `index.js`.
+It invokes `ngraph.main()` function, which is the only export of [`index.js`](index.js).
 `index.js` is compiled with `browserify`:
 
 ```

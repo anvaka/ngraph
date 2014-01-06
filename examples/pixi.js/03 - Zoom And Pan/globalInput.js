@@ -1,5 +1,5 @@
 module.exports = function (graphics) {
-  var addWheelListener = require('./lib/addMouseWheel');
+  var addWheelListener = require('./lib/addWheelListener');
   var graphGraphics = graphics.graphGraphics;
 
   addWheelListener(graphics.domContainer, function (e) {

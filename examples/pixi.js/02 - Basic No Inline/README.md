@@ -1,6 +1,6 @@
 # Basic rendering with PIXI
 
-This example is slightghly refactored version of 01 - Basic. It is still the
+This example is slightghly refactored version of [01 - Basic](../01%20-%20Basic/). It is still the
 same code, but refactored into separate CommonJS file.
 
 Let's look at `index.html`:

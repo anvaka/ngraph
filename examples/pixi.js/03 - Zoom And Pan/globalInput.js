@@ -6,14 +6,42 @@ module.exports = function (graphics) {
     zoom(e.clientX, e.clientY, e.deltaY < 0);
   });
 
+document.onkeypress = function (evt) {
+  var k = evt ? evt.which : window.event.keyCode;
+  if (k == 32) {
+    zoom(391, 348, true);
+    return false;
+  }
+}
+
   addDragNDrop();
+
+  var getGraphCoordinates = (function () {
+    var ctx = {
+      global: { x: 0, y: 0} // store it inside closure to avoid GC pressure
+    };
+
+    return function (x, y) {
+      ctx.global.x = x; ctx.global.y = y;
+      return PIXI.InteractionData.prototype.getLocalPosition.call(ctx, graphGraphics);
+    }
+  }());
 
   function zoom(x, y, isZoomIn) {
     direction = isZoomIn ? 1 : -1;
     var factor = (1 + direction * 0.1);
-
     graphGraphics.scale.x *= factor;
     graphGraphics.scale.y *= factor;
+
+    // Technically code below is not required, but helps to zoom on mouse
+    // cursor, instead center of graphGraphics coordinates
+    var beforeTransform = getGraphCoordinates(x, y);
+    graphGraphics.updateTransform();
+    var afterTransform = getGraphCoordinates(x, y);
+
+    graphGraphics.position.x += (afterTransform.x - beforeTransform.x) * graphGraphics.scale.x;
+    graphGraphics.position.y += (afterTransform.y - beforeTransform.y) * graphGraphics.scale.y;
+    graphGraphics.updateTransform();
   }
 
   function addDragNDrop() {

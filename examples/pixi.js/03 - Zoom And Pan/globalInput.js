@@ -6,14 +6,6 @@ module.exports = function (graphics) {
     zoom(e.clientX, e.clientY, e.deltaY < 0);
   });
 
-document.onkeypress = function (evt) {
-  var k = evt ? evt.which : window.event.keyCode;
-  if (k == 32) {
-    zoom(391, 348, true);
-    return false;
-  }
-}
-
   addDragNDrop();
 
   var getGraphCoordinates = (function () {

@@ -52,3 +52,8 @@ graph coordinates, and update node's position via `setNodePosition()`:
 var graphPos = getGraphCoordinates(mousePos.x, mousePos.y);
 layout.setNodePosition(nodeUnderCursor.id, graphPos.x, graphPos.y);
 ```
+
+The rest is remained to layout algorithm. It will update positions of other nodes
+according to current situation, and PIXI's renderer will reflect this on stage.
+
+Once again, you can play with final results here: **[Node Interactions](http://anvaka.github.io/ngraph/examples/pixi.js/04%20-%20Individual%20Node%20Events/)**

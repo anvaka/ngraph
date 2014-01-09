@@ -12,6 +12,8 @@ module.exports = function (graph, layout) {
   var graphics = new PIXI.Graphics();
   graphics.position.x = width/2;
   graphics.position.y = height/2;
+  graphics.scale.x = 0.4;
+  graphics.scale.y = 0.4;
   stage.addChild(graphics);
 
   // Default callbacks to build/render nodes
@@ -162,4 +164,3 @@ module.exports = function (graph, layout) {
     }
   }
 }
-

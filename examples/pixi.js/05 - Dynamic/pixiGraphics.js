@@ -26,6 +26,8 @@ module.exports = function (graph, layout) {
   graph.forEachNode(initNode);
   graph.forEachLink(initLink);
 
+  listenToGraphEvents();
+
   return {
     renderFrame: function () {
       layout.step();
@@ -60,7 +62,6 @@ module.exports = function (graph, layout) {
     domContainer: renderer.view,
     graphGraphics: graphics,
     stage: stage,
-
     getNodeAt: getNodeAt 
   };
 
@@ -131,6 +132,31 @@ module.exports = function (graph, layout) {
 
         if (insideNode) {
           return graph.getNode(nodeId);
+        }
+      }
+    }
+  }
+
+  function listenToGraphEvents() {
+    graph.on('changed', onGraphChanged);
+  }
+
+  function onGraphChanged(changes) {
+    for (var i = 0; i < changes.length; ++i) {
+      var change = changes[i];
+      if (change.changeType === 'add') {
+        if (change.node) {
+          initNode(change.node);
+        }
+        if (change.link) {
+          initLink(change.link);
+        }
+      } else if (change.changeType === 'remove') {
+        if (change.node) {
+          delete nodeUI[change.node.id];
+        }
+        if (change.link) {
+          delete linkUI[change.link.id];
         }
       }
     }

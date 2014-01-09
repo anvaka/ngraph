@@ -2,7 +2,7 @@ module.exports.main = function () {
   var createPixiGraphics = require('./pixiGraphics');
   var getRandomNiceColor = require('./lib/niceColors');
 
-  var graph = require('ngraph.generators').grid(10, 40),
+  var graph = require('ngraph.graph')(),
       layout = createLayout(graph);
 
   var graphics = createPixiGraphics(graph, layout);
@@ -38,7 +38,10 @@ module.exports.main = function () {
   var bindGlobalInput = require('./globalInput');
   bindGlobalInput(graphics, layout);
 
-  // begin animation loop:
+  // begin graph animation (add/remove nodes):
+  require('./lib/animateGraph').animate(graph);
+
+  // begin frame rendering loop:
   renderFrame();
 
   function renderFrame() {

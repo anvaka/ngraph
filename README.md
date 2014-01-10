@@ -2,10 +2,12 @@
 
 Ngraph is a set of graph related algorithms. It can be used in a browser
 or on the server side. This repository is a collection of examples, which show
-how to use some of them.
+how to use some of them or build your own.
 
 # What is available?
 Currently this library is work in progress. I will add demos as quickly as I can.
+
+* [Rendering graphs with PIXI.js](https://github.com/anvaka/ngraph/tree/master/examples/pixi.js).
 
 # Why?
 I built [vivagraph](https://github.com/anvaka/VivaGraphJS) to learn javascript two years ago.

@@ -1,7 +1,3 @@
-# PIXI.JS
-* Show custom node shapes, make dynamic graph change. Something like [this](http://www.webgl.com/2012/07/webgl-demo-dynamic-graph-test-vivagraph/)
-* Show how to share what [we have done so far](https://github.com/anvaka/ngraph/tree/master/examples/pixi.js) using npm.
-
 # Terminal
 * Show how to render a graph using ASCII art
 * Render graph into a static image

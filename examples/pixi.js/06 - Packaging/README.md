@@ -8,7 +8,7 @@ example we'll make a shared npm package and use it to create animated Pixies tre
 Interactive demo: **[Pixies tree](http://anvaka.github.io/ngraph/examples/pixi.js/06%20-%20Packaging/)**
 
 
-In fact the [main file](index.js) of this example takes less than 20 lines of code, and 
+The [main file](index.js) of this example takes less than 20 lines of code, and 
 nicely abstracts complexity away:
 
 ``` js
@@ -38,4 +38,6 @@ var createPixiGraphics = require('ngraph.pixi');
 ```
 
 Now all code which we think will be useful for other developers is a separate
-npm component, and is hosted on github: [ngraph.pixi](https://github.com/anvaka/ngraph.pixi)
+npm component: [ngraph.pixi](https://github.com/anvaka/ngraph.pixi).
+
+

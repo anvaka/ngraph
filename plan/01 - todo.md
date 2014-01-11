@@ -1,5 +1,4 @@
 # Terminal
-* Show how to render a graph using ASCII art
 * Render graph into a static image
 
 # Two.js

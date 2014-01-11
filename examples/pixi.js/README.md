@@ -7,4 +7,4 @@ If you'd like to see thinking process of how this package was made, please follo
 * [03. Zoom and Pan](http://anvaka.github.io/ngraph/examples/pixi.js/03%20-%20Zoom%20And%20Pan/) - Adds basic mouse support, allowing to zoom in on a node and pan entire scene.
 * [04 - Node interaction](http://anvaka.github.io/ngraph/examples/pixi.js/04%20-%20Individual%20Node%20Events/) - Everything we've done in examples 01, 02 and 03, plus allows to drag individual graph nodes.
 * [05 - Dynamic](http://anvaka.github.io/ngraph/examples/pixi.js/05%20-%20Dynamic/) - Shows how to render a dynamic graph with custom nodes and edges.
-* [06 - Packaging](https://github.com/anvaka/ngraph/tree/master/examples/pixi.js/06%20-%20Packaging) - Incapsulates pixi rendering into a separate package, makes it easy to share and use it. 
+* [06 - Packaging](http://anvaka.github.io/ngraph/examples/pixi.js/06%20-%20Packaging/) - Incapsulates pixi rendering into a separate package, makes it easy to share and use it. 

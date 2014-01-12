@@ -10,7 +10,7 @@ layout... with terminal:
 
 # How it's made?
 
-Amount of code require to render this grid in terminal is very small:
+Amount of code required to render this grid in terminal is very small:
 
 ``` js
 var graph = require('ngraph.generators').grid(10, 10);
@@ -30,7 +30,7 @@ asciiGraphics.run();
 ```
 
 All rendering is done with [ngraph.ascii](https://github.com/anvaka/ngraph.ascii).
-`ngraph.ascii` uses `[ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout)`
+`ngraph.ascii` uses [`ngraph.forcelayout`](https://github.com/anvaka/ngraph.forcelayout)
 to determine node positions and then via simple transforms scales graph down to available screen space. These [6 lines of 
 code](https://github.com/anvaka/ngraph.ascii/blob/62c2a9540986539e07421d20a822bcf1374c4c9d/lib/graphics.js#L56-L61)
 do all job for us:

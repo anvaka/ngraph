@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "start": "node_modules/.bin/browserify -s ngraph index.js > bundle.js"
+  },
+  "dependencies": {
+    "ngraph.generators": "0.0.2",
+    "ngraph.ascii": "0.0.1"
+  },
+  "devDependencies": {
+    "browserify": "~3.18.0"
+  }
+}

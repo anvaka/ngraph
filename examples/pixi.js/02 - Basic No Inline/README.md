@@ -20,7 +20,7 @@ Let's look at `index.html`:
 ```
 
 It invokes `ngraph.main()` function, which is the only export of [`index.js`](index.js).
-`index.js` is compiled with `browserify`:
+`index.js` is compiled with [`browserify`](http://browserify.org/):
 
 ```
 browserify -s ngraph index.js > bundle.js

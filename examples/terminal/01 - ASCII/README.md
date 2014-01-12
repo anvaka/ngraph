@@ -57,7 +57,7 @@ Easy, right?
 
 # Bonus
 
-By the way, since we also have abstracted screen itself, we can easily implement one which does not necessary render to terminal. `ngraph.ascii` comes with a screen which renders into array of characters ([2]). We can easily leverage this fact and render ascii graph in side `pre` tag in your browser. **[Here is live demo](http://anvaka.github.io/ngraph/examples/terminal/01%20-%20ASCII/)**.
+By the way, since we also have abstracted screen itself, we can easily implement one which does not necessary render to terminal. `ngraph.ascii` comes with a screen which renders into array of characters ([2]). We can easily leverage this fact and render ascii graph inside `pre` tag in your browser. **[Here is live demo](http://anvaka.github.io/ngraph/examples/terminal/01%20-%20ASCII/)**.
 
 Hope you enjoy :)
 

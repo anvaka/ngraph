@@ -1,12 +1,11 @@
 # Packaging
 
 In past five examples we've created a graph renderer using PIXI.js. In this
-example we'll make a shared npm package and use it to create animated Pixies tree:
+example we've made a separate package out of it: [ngraph.pixi](https://github.com/anvaka/ngraph.pixi). Interactive demo: **[Pixies tree](http://anvaka.github.io/ngraph/examples/pixi.js/06%20-%20Packaging/)**
 
 ![Pixies tree](http://i.snag.gy/XNxJV.jpg)
 
-Interactive demo: **[Pixies tree](http://anvaka.github.io/ngraph/examples/pixi.js/06%20-%20Packaging/)**
-
+# Code
 
 The [main file](index.js) of this example takes less than 20 lines of code, and 
 nicely abstracts complexity away:
@@ -37,7 +36,5 @@ The most important part is:
 var createPixiGraphics = require('ngraph.pixi');
 ```
 
-Now all code which we think will be useful for other developers is a separate
-npm component: [ngraph.pixi](https://github.com/anvaka/ngraph.pixi).
-
+This allows other developers use our pixi renderer.
 

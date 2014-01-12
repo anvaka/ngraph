@@ -1,2 +1,2 @@
-# PIXI.JS
-* Show how to share what [we have done so far](https://github.com/anvaka/ngraph/tree/master/examples/pixi.js) using npm.
+# Terminal
+* Show how to render a graph using ASCII art

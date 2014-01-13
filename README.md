@@ -7,7 +7,8 @@ how to use some of them or build your own.
 # What is available?
 Currently this library is work in progress. I will add demos as quickly as I can.
 
-* [Rendering graphs with PIXI.js](https://github.com/anvaka/ngraph/tree/master/examples/pixi.js).
+* [Rendering graphs with PIXI.js](https://github.com/anvaka/ngraph/tree/master/examples/pixi.js)
+* [Rendering graph from terminal](https://github.com/anvaka/ngraph/tree/master/examples/terminal)
 
 # Why?
 I built [vivagraph](https://github.com/anvaka/VivaGraphJS) to learn javascript two years ago.

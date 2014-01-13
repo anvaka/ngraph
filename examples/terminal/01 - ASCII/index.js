@@ -3,10 +3,12 @@ module.exports.main = function () {
   var ascii = require('ngraph.ascii');
 
   var scene = document.getElementById('scene');
-
   var screenSize = getSceneSize(scene, symbolSize);
+  
+  // setup fake screen:
   var screen = ascii.arrayScreen(screenSize.width - 2, screenSize.height - 2, renderScene)
 
+  // and render 10x10 grid graph into this screen:
   ascii.graphics(require('ngraph.generators').grid(10, 10), { screen: screen })
        .run();
 
@@ -26,4 +28,3 @@ function getSceneSize(scene, symbolSize) {
     height: (scene.offsetHeight/symbolSize.height)|0
   };
 }
-

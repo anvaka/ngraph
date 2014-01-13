@@ -17,7 +17,7 @@ module.exports.main = function () {
     for (var row = 0; row < screen.height(); ++row) {
       text.push(chars.slice(row * width, (row + 1) * width).join(''));
     }
-    scene.innerText = text.join('\n');
+    scene.textContent = text.join('\n');
   }
 }
 

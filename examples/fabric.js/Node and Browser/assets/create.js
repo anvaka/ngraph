@@ -52,11 +52,6 @@ function saveCanvasToFile(canvas, fileName) {
   var fs = require('fs');
   var path = require('path');
   var fullName = path.join(__dirname, fileName);
-  var outFile = fs.createWriteStream(fullName);
 
-  canvas.createPNGStream().on('data', function(chunk) {
-    outFile.write(chunk);
-  }).on('end', function () {
-    console.log('Graph saved to: ' + fullName);
-  });
+  canvas.createPNGStream().pipe(fs.createWriteStream(fullName));
 }

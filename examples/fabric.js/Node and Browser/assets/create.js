@@ -1,7 +1,7 @@
-// This file generate thumbnails for several graphs from generator.
+// This file generates thumbnails for several graphs from generator.
 // It duplicates lot of code from `../doItFromNode.js`.
-// I tried to make `doItFromNode.js` just a simple example without splitting
-// it into multiple smaller files, just to show small entire code is. But it
+// I tried to make `doItFromNode.js` as very simple example without splitting
+// it into multiple files to show how small it is.  But it
 // might make more sense to just split that further...
 
 saveGraph('grid', {n: 10, m: 10});

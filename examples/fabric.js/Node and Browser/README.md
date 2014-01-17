@@ -10,7 +10,7 @@ These images were created from node.js ([1]):
 <a href='http://anvaka.github.io/ngraph/examples/fabric.js/Node%20and%20Browser/index.html?graph=path'><img alt='path, length=10' src='https://raw2.github.com/anvaka/ngraph/master/examples/fabric.js/Node%20and%20Browser/assets/path.png' width='128px'></img></a>
 <a href='http://anvaka.github.io/ngraph/examples/fabric.js/Node%20and%20Browser/index.html?graph=complete&n=5'><img alt='complete, n=5' src='https://raw2.github.com/anvaka/ngraph/master/examples/fabric.js/Node%20and%20Browser/assets/complete.png' width='128px'></img></a>
 
-Click any of them to render corresponding graph in your browser. Use mouse wheel to zoom, and drag nodes around with left button.
+Click any of them to render corresponding graph in your browser. Use mouse wheel to zoom. Drag nodes around with left button.
 
 # How does this work
 

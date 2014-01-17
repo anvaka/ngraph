@@ -3,7 +3,7 @@ module.exports.main = function () {
   var fabricGraphics = require('ngraph.fabric')(graph);
 
   // this is a power of fabric. Shared ui settings can be used both on the
-  // server side inside node.js application and in the browser. Checkout
+  // server side inside node.js application and in the browser. Check out
   // `doItFromNode.js` example to see how it's used inside node
   require('./ui')(fabricGraphics, fabric);
 

@@ -1,6 +1,6 @@
-// this code changes appearance of nodes and links for fabricGraphics. What's
-// nice about it - it is used in `customUI` example which renders interactive
-// graphs in browser, and in `node.js` example to render graph into the image
+// this code changes appearance of nodes and links for fabricGraphics.
+// It is used in `index.js` to render interactive graphs in a browser
+// and in `doItFromNode` example to save graph as image from node.js
 module.exports = function (fabricGraphics, fabric) {
   fabricGraphics.createNodeUI(createNode)
     .renderNode(renderNode)
@@ -19,7 +19,7 @@ module.exports = function (fabricGraphics, fabric) {
   }
 
   function createLink(link) {
-    // lines in fabric are odd... Maybe I don't understand them.
+    // lines in fabric are odd... Probably I don't understand them.
     return new fabric.Line([0, 0, 0, 0], {
       stroke: getNiceColor(),
       originX: 'center',

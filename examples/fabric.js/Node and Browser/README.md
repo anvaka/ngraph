@@ -1,5 +1,5 @@
 # Node and Browser
-This example shows how to reuse code to render interactive graphs in your browser and how to save them as images in node.js
+This example shows how to reuse code to render interactive graphs in your browser and how to save them as images from node.js
 
 These images were created from node.js ([1]):
 

@@ -21,8 +21,7 @@ graph.addLink(1, 2);
 
 var fabricGraphics = require('ngraph.fabric')(graph);
 
-// Launch animation loop:
-fabricGraphics.run();
+fabricGraphics.run(); // Launch animation loop
 ```
 
 This will render a graph with two rectangular nodes. To customize its appearance we need to tell API how we want to render nodes and where:
@@ -46,7 +45,7 @@ fabricGraphcs.renderNode(function (circle) {
 
 If we look closer, all we need to customize appearance of a graph is instance of `fabricGraphics` and instance of `fabric` itself. This can be extracted into a separate file: [`ui.js`](https://github.com/anvaka/ngraph/blob/master/examples/fabric.js/Node%20and%20Browser/ui.js). Then anyone who wants to render nodes as circles with a nice color can require this file. And this is exactly what [`index.js`](https://github.com/anvaka/ngraph/blob/bfc08575ba9c0bb83387813d87c3a41f0124ecb0/examples/fabric.js/Node%20and%20Browser/index.js#L8) is doing.
 
-All we need to do now to use this from a browser is [browserify](http://browserify.org/) `index.js` and include script into [html file](https://github.com/anvaka/ngraph/blob/05ba2ad483409be5b5dca12624c9819306b6c51e/examples/fabric.js/Node%20and%20Browser/index.html#L9-L10).
+To use this from a browser we [browserify](http://browserify.org/) `index.js` and include produced script into [html file](https://github.com/anvaka/ngraph/blob/05ba2ad483409be5b5dca12624c9819306b6c51e/examples/fabric.js/Node%20and%20Browser/index.html#L9-L10).
 
 ## How to render from node.js
 `fabric.js` has two awesome parts:
@@ -54,6 +53,41 @@ All we need to do now to use this from a browser is [browserify](http://browseri
 1. Rich API
 2. Support of rendering from node.js
 
-By virtue of the last part, `ngraph.fabric` can render to static images for free. Remember how we abstracted graph  customization logic into `ui.js`? Now we reuse it from [`doItFromNode.js`](https://github.com/anvaka/ngraph/blob/05ba2ad483409be5b5dca12624c9819306b6c51e/examples/fabric.js/Node%20and%20Browser/doItFromNode.js#L33).
-  
+By virtue of the last part, `ngraph.fabric` can render to static images for free. 
+
+When rendering from node we don't need to update scene on each frame. Instead we manually calculate good layout:
+
+``` js
+var layout = require('ngraph.forcelayout')(graph);
+for (var i = 0; i < iterationsCount; ++i) {
+  layout.step();
+}
+```
+
+And initialize `ngraph.fabric` with our own layout:
+
+``` js
+var fabricGraphics = require('ngraph.fabric')(graph, { 
+  layout: layout
+});
+
+// We want custom UI from `ui.js`:
+require('./ui')(fabricGraphics, fabric);
+
+// Ask renderer to render just one frame:
+fabricGraphics.renderOneFrame();
+```
+
+Finally we save `fabric.js` canvas into a file:
+
+``` js
+var fs = require('fs');
+fabricGraphics.canvas.createPNGStream()
+   .pipe(fs.createWriteStream('graphFile.png'));
+```
+
+# Thank you for reading!
+
+I hope you enjoyed this little introduction into `ngraph.fabric`. Please let me know if something is not described well enough and I'll do my best to improve this :).
+
 [1]: https://github.com/anvaka/ngraph/blob/master/examples/fabric.js/Node%20and%20Browser/assets/create.js

@@ -6,8 +6,6 @@ layout... with terminal:
 
 [![http://i.snag.gy/XiQMS.jpg](http://i.snag.gy/XiQMS.jpg)](https://www.youtube.com/watch?v=tCPwCAZ8xFE)
 
-[1]: https://github.com/anvaka/ngraph/tree/master/examples/pixi.js
-
 # How it's made?
 
 Amount of code required to render this grid in terminal is very small:
@@ -56,3 +54,14 @@ Only missing part is `renderNode()` function, which uses transform to render nod
 ```
 
 Easy, right?
+=======
+
+# Bonus
+
+By the way, since we also have abstracted screen itself, we can easily implement one which does not necessary render to terminal. `ngraph.ascii` comes with a screen which renders into array of characters ([2]). We can easily leverage this fact and render ascii graph inside `pre` tag in your browser. **[Here is live demo](http://anvaka.github.io/ngraph/examples/terminal/01%20-%20ASCII/)**.
+
+Hope you enjoy :)
+
+
+[1]: https://github.com/anvaka/ngraph/tree/master/examples/pixi.js
+[2]: https://github.com/anvaka/ngraph.ascii/blob/master/lib/arrayScreen.js

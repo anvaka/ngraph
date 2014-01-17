@@ -1,6 +1,7 @@
 # Node and Browser
 This example shows how to reuse code to render interactive graphs in your browser and how to save them as images from node.js
 
+# Demo
 These images were created from node.js ([1]):
 
 <a href='http://anvaka.github.io/ngraph/examples/fabric.js/Node%20and%20Browser/index.html?graph=grid'><img alt='grid 10x10' src='https://raw2.github.com/anvaka/ngraph/master/examples/fabric.js/Node%20and%20Browser/assets/grid.png' width='128px'></img></a>

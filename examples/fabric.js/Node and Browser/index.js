@@ -5,7 +5,7 @@ module.exports.main = function () {
 
   // this is a power of fabric. Shared ui settings can be used both on the
   // server side inside node.js application and in the browser. Checkout
-  // `node.js` example to see how it's used inside node
+  // `doItFromNode.js` example to see how it's used inside node
   require('./ui')(fabricGraphics, fabric);
 
   // begin animation loop:

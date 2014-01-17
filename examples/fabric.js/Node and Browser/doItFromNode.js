@@ -29,7 +29,7 @@ function renderToCanvas(graph, layout) {
   var fabric = require('fabric').fabric;
 
   // This line customize appearance of each node and link. The best part of it -
-  // it is the same code which renders graph in `customUI` example
+  // it is the same code which renders graph in `index.js`
   require('./ui')(fabricGraphics, fabric);
 
   var scale = 1;

@@ -1,2 +1,2 @@
 # Three.js
-* implement 3d quad tree
+* Implement 3d force based layout

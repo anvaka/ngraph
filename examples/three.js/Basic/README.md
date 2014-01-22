@@ -1,6 +1,6 @@
 # Basic 3D graph rendering
 
-This example shows how to render graphs in 3d.
+This example shows how to render graphs in 3d
 
 # Demo
 
@@ -40,13 +40,18 @@ module.exports.main = function () {
 
 All rendering examples here ([ngraph.pixi](https://github.com/anvaka/ngraph/tree/master/examples/pixi.js/06%20-%20Packaging), [ngraph.fabric](https://github.com/anvaka/ngraph/tree/master/examples/fabric.js/Node%20and%20Browser), [ngraph.ascii](https://github.com/anvaka/ngraph/tree/master/examples/terminal/01%20-%20ASCII), etc.) are following the same pattern in their rendering loop:
 
-1. Update layout
+1. Calculate graph layout
 2. Render scene
 
 What makes `ngraph.three` different from other renderers is its layout algorithm. It uses [`ngraph.forcelayout3d`](https://github.com/anvaka/ngraph.forcelayout3d) a three dimensional cousin of [`ngraph.forcelayout`](https://github.com/anvaka/ngraph.forcelayout).
 
 Both force layout algorithms are using non-recursive [quad-tree](http://en.wikipedia.org/wiki/Quadtree) to solve [n-body problem](http://en.wikipedia.org/wiki/N-body_problem). Unfortunately 3d layout is slower than 2d. From my experiments it can render at 30+fps graphs with 1k nodes, 3k edges. I'm sure this will be improved in future.
 
+# Rendering scene
+When layout is calculated [`three.js`](http://threejs.org/) is used to show graph. `ngraph.three` creates default UI objects for each element of a graph. At each frame it updates their positions and asks three.js to rerender scene. 
+
+We'll see in greater detail how to customize appearance of a graph in nearest future. Please stay tuned. And for now, let me ask you for...
+
 # Feedback
 
-This is all work in progress at its very early stage. If you feel like API is missing something, please feel free to open issues in corresponding repository. I really need your feedback :)!
+This is all work in progress at its very early stage. If you feel like API is missing something, please feel free to open issue in corresponding repository or shoot me an email. I'd really love to hear from you :)!

@@ -36,7 +36,7 @@ module.exports.main = function () {
 }
 ```
 
-`ngraph.three` is a higher level abstraction which provides convenient API to initialize scene, control layout, and render graph. 
+[`ngraph.three`](https://github.com/anvaka/ngraph.three) is a higher level abstraction which provides convenient API to initialize scene, control layout, and render graph. 
 
 All rendering examples here ([ngraph.pixi](https://github.com/anvaka/ngraph/tree/master/examples/pixi.js/06%20-%20Packaging), [ngraph.fabric](https://github.com/anvaka/ngraph/tree/master/examples/fabric.js/Node%20and%20Browser), [ngraph.ascii](https://github.com/anvaka/ngraph/tree/master/examples/terminal/01%20-%20ASCII), etc.) are following the same pattern in their rendering loop:
 

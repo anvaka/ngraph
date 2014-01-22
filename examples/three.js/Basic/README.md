@@ -21,3 +21,32 @@ You can control camera position by using "Space Ship" mechanics:
 * `left|right` yaw
 
 **Note:** WebGL is required for best performance
+
+# How does this work
+
+As it often happens with npm modules entire program is 20 lines long, 10 lines of which are query string parsing. Main part is this:
+
+``` js
+module.exports.main = function () {
+  var graph = getGraphFromQueryString(window.location.search.substring(1));
+  var createThree = require('ngraph.three');
+  var graphics = createThree(graph);
+
+  graphics.run(); // begin animation loop
+}
+```
+
+`ngraph.three` is a higher level abstraction which provides convenient API to initialize scene, control layout, and render graph. 
+
+All rendering examples here ([ngraph.pixi](https://github.com/anvaka/ngraph/tree/master/examples/pixi.js/06%20-%20Packaging), [ngraph.fabric](https://github.com/anvaka/ngraph/tree/master/examples/fabric.js/Node%20and%20Browser), [ngraph.ascii](https://github.com/anvaka/ngraph/tree/master/examples/terminal/01%20-%20ASCII), etc.) are following the same pattern in their rendering loop:
+
+1. Update layout
+2. Render scene
+
+What makes `ngraph.three` different from other renderers is its layout algorithm. It uses [`ngraph.forcelayout3d`](https://github.com/anvaka/ngraph.forcelayout3d) a three dimensional cousin of [`ngraph.forcelayout`](https://github.com/anvaka/ngraph.forcelayout).
+
+Both force layout algorithms are using non-recursive [quad-tree](http://en.wikipedia.org/wiki/Quadtree) to solve [n-body problem](http://en.wikipedia.org/wiki/N-body_problem). Unfortunately 3d layout is slower than 2d. From my experiments it can render at 30+fps graphs with 1k nodes, 3k edges. I'm sure this will be improved in future.
+
+# Feedback
+
+This is all work in progress at its very early stage. If you feel like API is missing something, please feel free to open issues in corresponding repository. I really need your feedback :)!

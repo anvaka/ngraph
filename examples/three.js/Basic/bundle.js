@@ -1,22 +1,22 @@
 !function(e){if("object"==typeof exports)module.exports=e();else if("function"==typeof define&&define.amd)define(e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.ngraph=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 module.exports.main = function () {
-  var graph = getGraphFromQueryString(window.location.search.substring(1));
+  var query = require('query-string').parse(window.location.search.substring(1));
+  var graph = getGraphFromQueryString(query);
   var createThree = require('ngraph.three');
   var graphics = createThree(graph);
 
-  // begin animation loop:
-  graphics.run();
+  graphics.run(); // begin animation loop:
+  graphics.camera.position.z = getNumber(query.z, 400);
 }
 
-function getGraphFromQueryString(queryString) {
-  var query = require('query-string').parse(queryString);
-  var n = parseInt(query.n, 10) || 10;
-  var m = parseInt(query.m, 10) || 10;
-  var k = parseInt(query.k, 10) || 10;
-
+function getGraphFromQueryString(query) {
   var graphGenerators = require('ngraph.generators');
   var createGraph = graphGenerators[query.graph] || graphGenerators.grid;
-  return createGraph(n, m, k);
+  return createGraph(getNumber(query.n), getNumber(query.m), getNumber(query.k));
+}
+
+function getNumber(string, defaultValue) {
+  return parseInt(string, 10) || defaultValue || 10;
 }
 
 },{"ngraph.generators":2,"ngraph.three":5,"query-string":34}],2:[function(require,module,exports){

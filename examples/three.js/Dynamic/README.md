@@ -6,7 +6,7 @@ This example shows how to render dynamic 3d graphs with custom UI
 
 # How it's made?
 
-Each renderer in `ngraph` family supports two methods: One tells renderer how we want to render each graph element, and the other is called on each frame to let you update elemnt's position according to layout algorithm.
+Each renderer in `ngraph` family supports two methods: One tells renderer how we want to render each graph element, and the other is called on each frame to let you update element's position according to layout algorithm.
 
 [`ngraph.three`](https://github.com/anvaka/ngraph.three) is not different:
 ``` js

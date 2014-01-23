@@ -6,7 +6,7 @@ This example shows how to render dynamic 3d graphs with custom UI
 
 # How it's made?
 
-Each renderer in `ngraph` family supports two methods: One tells renderer how we want to render each graph node, and another is called on each frame to let you update position, based on layout algorithm.
+Each renderer in `ngraph` family supports two methods: One tells renderer how we want to render each graph element, and the other is called on each frame to let you update elemnt's position according to layout algorithm.
 
 [`ngraph.three`](https://github.com/anvaka/ngraph.three) is not different:
 ``` js
@@ -58,4 +58,4 @@ threeGraphics.renderNode(function (link) {
 ```
 
 # Dynamic changes
-Similar to other renderers of `ngraph` family, `ngraph.three` listens to graph events ([learn more](https://github.com/anvaka/ngraph.graph#listening-to-events)). When graph is changed it adds/removes corresponding elements to the scene, using methods described above.
+Similar to other renderers of `ngraph` family, `ngraph.three` listens to graph events ([learn more](https://github.com/anvaka/ngraph.graph#listening-to-events)). When graph is changed, `ngraph.three` adds or removes corresponding UI elements to the scene.

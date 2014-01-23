@@ -1,19 +1,19 @@
 module.exports.main = function () {
-  var graph = getGraphFromQueryString(window.location.search.substring(1));
+  var query = require('query-string').parse(window.location.search.substring(1));
+  var graph = getGraphFromQueryString(query);
   var createThree = require('ngraph.three');
   var graphics = createThree(graph);
 
-  // begin animation loop:
-  graphics.run();
+  graphics.run(); // begin animation loop:
+  graphics.camera.position.z = getNumber(query.z, 400);
 }
 
-function getGraphFromQueryString(queryString) {
-  var query = require('query-string').parse(queryString);
-  var n = parseInt(query.n, 10) || 10;
-  var m = parseInt(query.m, 10) || 10;
-  var k = parseInt(query.k, 10) || 10;
-
+function getGraphFromQueryString(query) {
   var graphGenerators = require('ngraph.generators');
   var createGraph = graphGenerators[query.graph] || graphGenerators.grid;
-  return createGraph(n, m, k);
+  return createGraph(getNumber(query.n), getNumber(query.m), getNumber(query.k));
+}
+
+function getNumber(string, defaultValue) {
+  return parseInt(string, 10) || defaultValue || 10;
 }

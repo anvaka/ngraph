@@ -1,6 +1,3 @@
-# Three.js
-* Show how to render graph in 3D
-
 # Chore
 * Update README file for [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout)
 * Update README file for [ngraph.forcelayout3d](https://github.com/anvaka/ngraph.forcelayout3d)

@@ -1,2 +1,2 @@
-# Three.js
-* Implement 3d force based layout
+# SVG
+Investigate potential SVG libraries to render graphs

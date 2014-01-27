@@ -5,7 +5,7 @@ into `gexf`, a file consumable by [`gephi`](https://gephi.org/).
 
 Video shows this README in action:
 
-[![export ngraph to gephi](http://i.snag.gy/umYxq.jpg)](https://www.youtube.com/watch?v=m-aLEoAVUv0)
+[![export ngraph to gephi](http://i.snag.gy/90vg1.jpg)](https://www.youtube.com/watch?v=m-aLEoAVUv0)
 
 The code is extremely simple:
 

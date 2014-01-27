@@ -3,6 +3,10 @@
 This is very small example shows how to export your `ngraph.graph` data structure
 into `gexf`, a file consumable by [`gephi`](https://gephi.org/).
 
+Video shows this README in action:
+
+[![export ngraph to gephi](http://i.snag.gy/umYxq.jpg)](https://www.youtube.com/watch?v=m-aLEoAVUv0)
+
 The code is extremely simple:
 
 ```

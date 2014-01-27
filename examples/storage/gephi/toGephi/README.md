@@ -1,4 +1,4 @@
-# Export ngraph to gexf
+# Export ngraph to Gephi
 
 This is very small example shows how to export your `ngraph.graph` data structure
 into `gexf`, a file consumable by [`gephi`](https://gephi.org/).

@@ -9,7 +9,7 @@ Video shows this README in action:
 
 The code is extremely simple:
 
-```
+``` js
 var gexf = require('ngraph.gexf'); // our gexf files manipulator
 
 // let's create a binary tree:

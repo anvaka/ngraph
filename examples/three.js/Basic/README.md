@@ -7,7 +7,7 @@ This example shows how to render graphs in 3d
 Click any of these images to view interactive animation:
 
 <a href='http://anvaka.github.io/ngraph/examples/three.js/Basic/index.html?graph=balancedBinTree&n=6'><img alt='balancedBinTree, depth=6' src='https://raw2.github.com/anvaka/ngraph/master/examples/three.js/Basic/assets/BinTree.png' height='128px'></img></a>
-<a href='http://anvaka.github.io/ngraph/examples/three.js/Basic/index.html?graph=grid3'><img alt='grid 10x10x10' src='https://raw2.github.com/anvaka/ngraph/master/examples/three.js/Basic/assets/grid3d.png' height='128px'></img></a>
+<a href='http://anvaka.github.io/ngraph/examples/three.js/Basic/index.html?graph=grid3&z=800'><img alt='grid 10x10x10' src='https://raw2.github.com/anvaka/ngraph/master/examples/three.js/Basic/assets/grid3d.png' height='128px'></img></a>
 <a href='http://anvaka.github.io/ngraph/examples/three.js/Basic/index.html?graph=grid'><img alt='grid 10x10' src='https://raw2.github.com/anvaka/ngraph/master/examples/three.js/Basic/assets/grid.png' height='128px'></img></a>
 <a href='http://anvaka.github.io/ngraph/examples/three.js/Basic/index.html?graph=circularLadder'><img alt='circularLadder, length=10' src='https://raw2.github.com/anvaka/ngraph/master/examples/three.js/Basic/assets/circularLadder.png' height='128px'></img></a>
 <a href='http://anvaka.github.io/ngraph/examples/three.js/Basic/index.html?graph=complete&n=5'><img alt='complete, n=5' src='https://raw2.github.com/anvaka/ngraph/master/examples/three.js/Basic/assets/complete6.png' height='128px'></img></a>

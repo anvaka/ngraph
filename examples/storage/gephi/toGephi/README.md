@@ -15,7 +15,7 @@ var gexf = require('ngraph.gexf'); // our gexf files manipulator
 // let's create a binary tree:
 var binTree = require('ngraph.generators').balancedBinTree(6);
 
-// end print gexf representation of it to the console:
+// And print gexf content to the console:
 var gexfFileContent = gexf.save(binTree);
 console.log(gexfFileContent);
 ```

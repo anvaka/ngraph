@@ -4,6 +4,10 @@ This example shows how to render dynamic 3d graphs with custom UI
 
 [**Interactive Demo**](http://anvaka.github.io/ngraph/examples/three.js/Dynamic/index.html)
 
+Video:
+
+[![Video demo](http://i.snag.gy/EOWgQ.jpg)](http://www.youtube.com/watch?v=ZcxVTY_0SJA)
+
 # How it's made?
 
 Each renderer in `ngraph` family supports two methods: One tells renderer how we want to render each graph element, and the other is called on each frame to let you update element's position according to layout algorithm.

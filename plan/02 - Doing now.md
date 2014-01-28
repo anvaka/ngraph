@@ -1,2 +1,5 @@
-# Three.js
-* Implement 3d force based layout
+# Gephi
+gexf file parser
+
+# SVG
+Investigate potential SVG libraries to render graphs

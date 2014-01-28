@@ -14,4 +14,4 @@ Click on a video below to quickly see it in action.
 </tr>
 </table>
 
-Please let me know what you think!
+Please let me know what you think :)

@@ -9,7 +9,7 @@ Click here to view [**interactive version**](http://anvaka.github.io/ngraph/exam
 
 Note: This demo is a basic example, under 40 lines of code. It does not support error handling. Please let me know if something is not working.
 
-# So, how it's done?
+# How it's done?
 As with everything in `ngraph` parser of `gexf` files is implemented as a separate package: [`ngraph.gexf`](https://github.com/anvaka/ngraph.gexf). It's sole responsibility is to convert xml string into [`ngraph.graph`](https://github.com/anvaka/ngraph.graph) data structure. 
 
 This is the main part of the demo:

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Import gexf files from gephi</title>
+	<style>
+		body { background-color: black; height: 100%; width: 100%; position: absolute; overflow: hidden; margin: 0; padding: 0;}
+    .renderForm { 
+      position: absolute;
+      color: white;
+      width: 200px;
+      background-color: #263248;
+      border: 1px solid #7E8AA2;
+      padding: 8px;
+    }
+    input { width: 100%;}
+    textarea { width: 100%; padding: 0}
+    #scene { position: absolute; left: 0; top: 0; width: 100%; height: 100%}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../../../pixi.js/lib/pixi.js"></script>
+	<script src="bundle.js"></script>
+</head>
+<body onload='ngraph.main()'>
+  <div id='scene'></div>
+  <form class='renderForm'>
+    <h4>Paste *.gexf content here:</h4>
+    <textarea id='gexfContent' rows='8'></textarea>
+    <p><input type='submit' value='Render graph'/> </p>
+  </form>
+</body>
+</html>

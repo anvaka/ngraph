@@ -1,5 +1,4 @@
 # Chore
-* Update README file for [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout)
 * Update README file for [ngraph.forcelayout3d](https://github.com/anvaka/ngraph.forcelayout3d)
 * Update README file for [ngraph.quadtreebh3d](https://github.com/anvaka/ngraph.quadtreebh3d)
 * Update README file for [ngraph.physics.simulator](https://github.com/anvaka/ngraph.physics.simulator)

@@ -1,3 +1,6 @@
+# Chore
+* Update README file for [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout) - Done. Repo has updated readme.
+
 # Gephi
 * gexf file parser - [results](https://github.com/anvaka/ngraph/tree/master/examples/storage/gephi)
 

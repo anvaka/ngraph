@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "ngraph.three": "0.0.0",
-    "ngraph.gexf": "0.0.0",
+    "ngraph.gexf": "~0.0",
     "ngraph.generators": "0.0.3"
   }
 }

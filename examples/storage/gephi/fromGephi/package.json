@@ -4,7 +4,7 @@
   },
   "dependencies": {
     "ngraph.pixi": "0.0.1",
-    "ngraph.gexf": "0.0.2"
+    "ngraph.gexf": "~0.0"
   },
   "devDependencies": {
     "browserify": "~3.18.0"

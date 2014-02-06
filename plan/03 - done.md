@@ -1,3 +1,9 @@
+# Chore
+* Update README file for [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout) - Done. Repo has updated readme.
+
+# Gephi
+* gexf file parser - [results](https://github.com/anvaka/ngraph/tree/master/examples/storage/gephi)
+
 # Three.js
 * Show how to render graph in 3D - [results](https://github.com/anvaka/ngraph/tree/master/examples/three.js)
 * Implement 3d force based layout - [results](https://github.com/anvaka/ngraph.forcelayout3d)

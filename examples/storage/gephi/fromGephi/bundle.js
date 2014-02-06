@@ -190,7 +190,7 @@ function load(gexfContent) {
 
   function addNode(node) {
     var nodeData = copyAttributes(node);
-    var id = extractNumberIfCan(nodeData.id);
+    var id = nodeData.id;
     delete nodeData.id;
 
     addNodeData(nodeData, node);

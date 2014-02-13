@@ -2,12 +2,9 @@ module.exports.main = function () {
   var graph = require('ngraph.graph')();
 
   // first initialize 3d ngraph.three renderer:
-  var threeCanvas = document.getElementById('three');
-  threeCanvas.width = window.innerWidth/2;
-  threeCanvas.height = window.innerHeight;
   var threeGraphics = require('ngraph.three')(graph, {
     interactive: false,
-    canvas: threeCanvas
+    canvas: document.getElementById('three')
   });
 
   // tell it we want custom UI:

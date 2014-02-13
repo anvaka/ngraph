@@ -2,9 +2,12 @@ module.exports.main = function () {
   var graph = require('ngraph.graph')();
 
   // first initialize 3d ngraph.three renderer:
+  var threeCanvas = document.getElementById('three');
+  threeCanvas.width = window.innerWidth/2;
+  threeCanvas.height = window.innerHeight;
   var threeGraphics = require('ngraph.three')(graph, {
     interactive: false,
-    canvas: document.getElementById('three')
+    canvas: threeCanvas
   });
 
   // tell it we want custom UI:
@@ -23,7 +26,7 @@ module.exports.main = function () {
   fabricGraphics.createNodeUI(require('./lib/fabricNode'))
                 .createLinkUI(require('./lib/fabricLink'))
                 .renderNode(require('./lib/renderFabricNode'))
-                .renderLink(require('./lib/renderFabricLink'))
+                .renderLink(require('./lib/renderFabricLink'));
   fabricGraphics.zoom(0, 0, 0.3);
 
   require('./lib/animateGraph').animate(graph); // begin graph modification
@@ -54,4 +57,4 @@ module.exports.main = function () {
     directionalLight.position.set(0, 0, -1).normalize();
     scene.add(directionalLight);
   }
-}
+};

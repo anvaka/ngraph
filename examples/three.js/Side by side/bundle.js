@@ -3,12 +3,9 @@ module.exports.main = function () {
   var graph = require('ngraph.graph')();
 
   // first initialize 3d ngraph.three renderer:
-  var threeCanvas = document.getElementById('three');
-  threeCanvas.width = window.innerWidth/2;
-  threeCanvas.height = window.innerHeight;
   var threeGraphics = require('ngraph.three')(graph, {
     interactive: false,
-    canvas: threeCanvas
+    canvas: document.getElementById('three')
   });
 
   // tell it we want custom UI:
@@ -2895,8 +2892,8 @@ module.exports = function (graph, settings) {
 
     var isWebGlSupported = ( function () { try { var canvas = document.createElement( 'canvas' ); return !! window.WebGLRenderingContext && ( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) ); } catch( e ) { return false; } } )();
     var renderer = isWebGlSupported ? new THREE.WebGLRenderer(settings) : new THREE.CanvasRenderer(settings);
-    var container = settings.container || window;
-    renderer.setSize(container.innerWidth, container.innerHeight);
+    var container = renderer.domElement;
+    renderer.setSize(container.clientWidth, container.clientHeight);
 
     if (settings.container) {
       settings.container.appendChild(renderer.domElement);

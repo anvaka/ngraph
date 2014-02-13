@@ -11,7 +11,9 @@ module.exports.main = function () {
   threeGraphics.createNodeUI(require('./lib/threeNode'))
                .createLinkUI(require('./lib/threeLink'));
 
-  addLights(threeGraphics.scene); // add direction lights to 3d scene
+  var scene = threeGraphics.scene;
+  var directionalLight = new THREE.DirectionalLight(0xffffff);
+  scene.add(directionalLight);
 
   // now intiialize 2d ngrpah.fabric renderer in its own canvas:
   var fabricGraphics = require('ngraph.fabric')(graph, {
@@ -46,12 +48,8 @@ module.exports.main = function () {
     var timer = Date.now() * 0.0002;
     camera.position.x = Math.cos(timer) * 1500;
     camera.position.z = Math.sin(timer) * 1500;
+    directionalLight.position.x = Math.cos(timer);
+    directionalLight.position.y = Math.sin(timer);
     camera.lookAt(scene.position);
-  }
-
-  function addLights(scene) {
-    var directionalLight = new THREE.DirectionalLight(0xffffff);
-    directionalLight.position.set(0, 0, -1).normalize();
-    scene.add(directionalLight);
   }
 };

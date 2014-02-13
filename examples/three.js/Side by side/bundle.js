@@ -2892,8 +2892,8 @@ module.exports = function (graph, settings) {
 
     var isWebGlSupported = ( function () { try { var canvas = document.createElement( 'canvas' ); return !! window.WebGLRenderingContext && ( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) ); } catch( e ) { return false; } } )();
     var renderer = isWebGlSupported ? new THREE.WebGLRenderer(settings) : new THREE.CanvasRenderer(settings);
-    var container = renderer.domElement;
-    renderer.setSize(container.clientWidth, container.clientHeight);
+    var container = settings.container || window;
+    renderer.setSize(container.innerWidth, container.innerHeight);
 
     if (settings.container) {
       settings.container.appendChild(renderer.domElement);

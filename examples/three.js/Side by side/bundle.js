@@ -5,7 +5,7 @@ module.exports.main = function () {
   // first initialize 3d ngraph.three renderer:
   var threeGraphics = require('ngraph.three')(graph, {
     interactive: false,
-    canvas: document.getElementById('three')
+    container: document.getElementById('threeContainer')
   });
 
   // tell it we want custom UI:
@@ -2663,9 +2663,12 @@ module.exports=require(19)
 module.exports = function (graph, settings) {
   var merge = require('ngraph.merge');
   settings = merge(settings, {
-    interactive: true
+    interactive: false
   });
 
+  var beforeFrameRender;
+  var isStable = false;
+  var disposed = false;
   var layout = createLayout(settings);
   var renderer = createRenderer(settings);
   var camera = createCamera(settings);
@@ -2682,6 +2685,8 @@ module.exports = function (graph, settings) {
   var graphics = {
     run: run,
     renderOneFrame: renderOneFrame,
+
+    onFrame: onFrame,
 
     /**
      * Gets UI object for a given node id
@@ -2711,7 +2716,6 @@ module.exports = function (graph, settings) {
      * @returns {object} this for chaining.
      */
     createNodeUI : function (createNodeUICallback) {
-      nodeUI = {};
       nodeUIBuilder = createNodeUICallback;
       rebuildUI();
       return this;
@@ -2755,7 +2759,6 @@ module.exports = function (graph, settings) {
      * @returns {object} this for chaining.
      */
     createLinkUI : function (createLinkUICallback) {
-      linkUI = {};
       linkUIBuilder = createLinkUICallback;
       rebuildUI();
       return this;
@@ -2782,6 +2785,11 @@ module.exports = function (graph, settings) {
       return this;
     },
 
+    /**
+     * Stops animation and deallocates all alocated resources
+     */
+    dispose: dispose,
+
     // expose properties
     renderer: renderer,
     camera: camera,
@@ -2793,12 +2801,17 @@ module.exports = function (graph, settings) {
 
   return graphics;
 
+  function onFrame(cb) {
+    // todo: allow multile callbacks
+    beforeFrameRender = cb;
+  }
+
   function initialize() {
-    nodeUIBuilder = defaults.createNodeUI,
-    nodeRenderer  = defaults.nodeRenderer,
-    linkUIBuilder = defaults.createLinkUI,
+    nodeUIBuilder = defaults.createNodeUI;
+    nodeRenderer  = defaults.nodeRenderer;
+    linkUIBuilder = defaults.createLinkUI;
     linkRenderer  = defaults.linkRenderer;
-    nodeUI = {}, linkUI = {}; // Storage for UI of nodes/links
+    nodeUI = {}; linkUI = {}; // Storage for UI of nodes/links
 
     graph.forEachLink(initLink);
     graph.forEachNode(initNode);
@@ -2807,13 +2820,62 @@ module.exports = function (graph, settings) {
   }
 
   function run() {
+    if (disposed) return;
+
     requestAnimationFrame(run);
-    layout.step();
+    if (!isStable) {
+      isStable = layout.step();
+    }
     controls.update(1);
     renderOneFrame();
   }
 
+  function dispose(options) {
+    // let clients selectively choose what to dispose
+    disposed = true;
+    options = merge(options, {
+      layout: true,
+      dom: true,
+      scene: true
+    });
+
+    beforeFrameRender = null;
+
+    graph.off('changed', onGraphChanged);
+    if (options.layout) layout.dispose();
+    if (options.scene) {
+      scene.traverse(function (object) {
+        if (typeof object.deallocate === 'function') {
+          object.deallocate();
+        }
+        disposeThreeObject(object.geometry);
+        disposeThreeObject(object.material);
+      });
+    }
+
+    if (options.dom) {
+      var domElement = renderer.domElement;
+      if(domElement && domElement.parentNode) {
+        domElement.parentNode.removeChild(domElement);
+      }
+    }
+  }
+
+  function disposeThreeObject(obj) {
+    if (!obj) return;
+
+    if (obj.deallocate === 'function') {
+      obj.deallocate();
+    }
+    if (obj.dispose === 'function') {
+      obj.dispose();
+    }
+  }
+
   function renderOneFrame() {
+    if (beforeFrameRender) {
+      beforeFrameRender();
+    }
     Object.keys(linkUI).forEach(renderLink);
     Object.keys(nodeUI).forEach(renderNode);
     renderer.render(scene, camera);
@@ -2850,6 +2912,7 @@ module.exports = function (graph, settings) {
   }
 
   function onGraphChanged(changes) {
+    resetStable();
     for (var i = 0; i < changes.length; ++i) {
       var change = changes[i];
       if (change.changeType === 'add') {
@@ -2874,6 +2937,10 @@ module.exports = function (graph, settings) {
     }
   }
 
+  function resetStable() {
+    isStable = false;
+  }
+
   function createLayout(settings) {
     if (settings.layout) {
       return settings.layout; // user has its own layout algorithm. Use it;
@@ -2888,10 +2955,11 @@ module.exports = function (graph, settings) {
       return settings.renderer;
     }
 
+    debugger;
     var isWebGlSupported = ( function () { try { var canvas = document.createElement( 'canvas' ); return !! window.WebGLRenderingContext && ( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) ); } catch( e ) { return false; } } )();
     var renderer = isWebGlSupported ? new THREE.WebGLRenderer(settings) : new THREE.CanvasRenderer(settings);
     var container = settings.container || window;
-    renderer.setSize(container.innerWidth, container.innerHeight);
+    renderer.setSize(container.clientWidth, container.clientHeight);
 
     if (settings.container) {
       settings.container.appendChild(renderer.domElement);
@@ -2914,7 +2982,7 @@ module.exports = function (graph, settings) {
 
   function createControls() {
     if (settings.interactive) {
-      var FlyControls = require('./lib/flyControls')
+      var FlyControls = require('./lib/flyControls');
       var controls = new FlyControls(camera);
       return controls;
     }
@@ -2927,15 +2995,17 @@ module.exports = function (graph, settings) {
     Object.keys(nodeUI).forEach(function (nodeId) {
       scene.remove(nodeUI[nodeId]);
     });
+    nodeUI = {};
 
     Object.keys(linkUI).forEach(function (linkId) {
-      scene.remove(linkUI[nodeId]);
+      scene.remove(linkUI[linkId]);
     });
+    linkUI = {};
 
     graph.forEachLink(initLink);
     graph.forEachNode(initNode);
   }
-}
+};
 
 },{"./lib/defaults":39,"./lib/flyControls":40,"ngraph.forcelayout3d":41,"ngraph.merge":66}],39:[function(require,module,exports){
 /**
@@ -2965,12 +3035,10 @@ module.exports.linkRenderer = linkRenderer;
 
 var NODE_SIZE = 2; // default size of a node square
 
-var nodeGeometry = new THREE.CubeGeometry(NODE_SIZE, NODE_SIZE, NODE_SIZE);
-var nodeMaterial = new THREE.MeshBasicMaterial({ color: 0xfefefe });
-
-var linkMaterial = new THREE.LineBasicMaterial({ color: 0x00cccc });
 
 function createNodeUI(node) {
+  var nodeMaterial = new THREE.MeshBasicMaterial({ color: 0xfefefe });
+  var nodeGeometry = new THREE.CubeGeometry(NODE_SIZE, NODE_SIZE, NODE_SIZE);
   return new THREE.Mesh(nodeGeometry, nodeMaterial);
 }
 
@@ -2980,6 +3048,7 @@ function createLinkUI(link) {
   linkGeometry.vertices.push(new THREE.Vector3(0, 0, 0));
   linkGeometry.vertices.push(new THREE.Vector3(0, 0, 0));
 
+  var linkMaterial = new THREE.LineBasicMaterial({ color: 0x00cccc });
   return new THREE.Line(linkGeometry, linkMaterial);
 }
 

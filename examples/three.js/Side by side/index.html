@@ -5,7 +5,7 @@
 	<style>
 		body { background-color: black; height: 100%; width: 100%; position: absolute; overflow: hidden; margin: 0; padding: 0;}
     canvas { width: 50%; float: left; height: 100%; }
-    #three { position: absolute; left: 50%;}
+    #threeContainer { position: absolute; left: 50%; width: 100%; height: 100%;}
 	</style>
 	
 	<script src="../lib/three.min.js"></script>
@@ -13,7 +13,8 @@
 	<script src="bundle.js"></script>
 </head>
 <body onload='ngraph.main()'>
-    <canvas id='three'></canvas>
+  <div id='threeContainer'>
+  </div>
     <canvas id='fabric'></canvas>
 </body>
 </html>

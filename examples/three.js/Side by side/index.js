@@ -4,7 +4,7 @@ module.exports.main = function () {
   // first initialize 3d ngraph.three renderer:
   var threeGraphics = require('ngraph.three')(graph, {
     interactive: false,
-    canvas: document.getElementById('three')
+    container: document.getElementById('threeContainer')
   });
 
   // tell it we want custom UI:

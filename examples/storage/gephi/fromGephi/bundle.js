@@ -172,7 +172,7 @@ function load(gexfContent) {
   parser.selectNodes('node').forEach(addNode);
   parser.selectNodes('edge').forEach(addLink);
 
-  var links = parser
+  var links = parser;
   return graph;
 
   function addAttributeDef(node) {
@@ -202,13 +202,16 @@ function load(gexfContent) {
     var attributes = copyAttributes(node);
     var link = graph.addLink(attributes.source, attributes.target);
     link.id = attributes.id;
+    if (attributes.weight !== undefined) {
+      link.weight = extractNumberIfCan(attributes.weight);
+    }
   }
 
   function addNodeData(target, xmlNode) {
     // first we parse defined attriubtes on node:
     parser.selectNodes('attvalue', xmlNode)
           .forEach(function (node) {
-            var attr = copyAttributes(node)
+            var attr = copyAttributes(node);
             var def = attributesDef[attr.for || attr.id];
             target[def.title] = parseType(attr.value, def.type);
           });
@@ -311,7 +314,7 @@ function save(graph) {
         return attr !== 'label' && supportedType(node.data[attr]);
       });
       if (keys.length > 0)  {
-        nodes.push('<attvalues>')
+        nodes.push('<attvalues>');
         keys.forEach(function (key) {
           if (!uniqueAttributes.hasOwnProperty(key)) {
             attributes.push('<attribute id="' + attrIdx + '" title="' + key + '" type="' + getType(node.data[key]) + '"/>');
@@ -321,7 +324,7 @@ function save(graph) {
           // todo: this will need encoding for complex data:
           nodes.push('<attvalue for="' + uniqueAttributes[key] + '" value="' + node.data[key] + '"/>');
         });
-        nodes.push('</attvalues>')
+        nodes.push('</attvalues>');
       }
     }
 
@@ -331,7 +334,12 @@ function save(graph) {
   var linkId = 0;
   graph.forEachLink(function (link) {
     linkId += 1;
-    links.push('<edge id="' + linkId + '" source="' + link.fromId + '" target="' + link.toId + '" />')
+    var linkDef = '<edge id="' + linkId + '" source="' + link.fromId + '" target="' + link.toId + '"';
+    if (typeof link.weight === 'number') {
+      linkDef += ' weight="' + link.weight + '"';
+    }
+
+    links.push(linkDef + '/>');
   });
 
   var header = writeHeader();
@@ -371,7 +379,7 @@ function getType(obj) {
   switch (typeof (obj)) {
     case "number" : return 'float';
     case "boolean": return 'boolean';
-    default: return 'string'
+    default: return 'string';
   }
 }
 

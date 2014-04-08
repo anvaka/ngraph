@@ -1,5 +1,6 @@
 # Algorithms
 * Implement graph metrics calculation
+* Implement edge bundling
 
 # Chore
 * Update README file for [ngraph.quadtreebh3d](https://github.com/anvaka/ngraph.quadtreebh3d)

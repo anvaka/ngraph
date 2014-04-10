@@ -3,7 +3,6 @@
 * Implement edge bundling
 
 # Chore
-* Update README file for [ngraph.quadtreebh3d](https://github.com/anvaka/ngraph.quadtreebh3d)
 * Update README file for [ngraph.physics.simulator](https://github.com/anvaka/ngraph.physics.simulator)
 * Update README file for [ngraph.generators](https://github.com/anvaka/ngraph.generators)
 

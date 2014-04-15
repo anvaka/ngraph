@@ -1,7 +1,8 @@
 # Chore
 * Update README file for [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout) - Done. Repo has updated readme.
 * Update README file for [ngraph.forcelayout3d](https://github.com/anvaka/ngraph.forcelayout3d) - Done. Repo has updated readme.
-* Update README file for [ngraph.quadtreebh3d](https://github.com/anvaka/ngraph.quadtreebh3d) - Done. Repos has updated readme.
+* Update README file for [ngraph.quadtreebh3d](https://github.com/anvaka/ngraph.quadtreebh3d) - Done. Repo has updated readme.
+* * Update README file for [ngraph.generators](https://github.com/anvaka/ngraph.generators) - Done. Repo has updated readme.
 
 # Gephi
 * gexf file parser - [results](https://github.com/anvaka/ngraph/tree/master/examples/storage/gephi)

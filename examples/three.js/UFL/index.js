@@ -50,7 +50,7 @@ function getNumber(string, defaultValue) {
 
 
 function nodeUI(node) {
-  var nodeGeometry = new THREE.SphereGeometry(2);
+  var nodeGeometry = new THREE.SphereGeometry(4);
   var nodeMaterial = new THREE.MeshPhongMaterial({
     color: 0xFF0100
   });

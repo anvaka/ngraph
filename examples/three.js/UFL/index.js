@@ -36,7 +36,7 @@ function getMaxDegree(graph) {
 
 function getGraphFromQueryString(query, cb) {
   var urlIsValid = query.url && query.url.match(/^http:\/\/s3.amazonaws.com\/yasiv_uf\/out\//);
-  var url = (urlIsValid && query.url) || 'http://s3.amazonaws.com/yasiv_uf/out/Meszaros/p0040/index.js';
+  var url = (urlIsValid && query.url) || 'http://s3.amazonaws.com/yasiv_uf/out/HB/494_bus/index.js';
 
   require('./lib/http').get(url, function (err, data) {
     if (err) return;
@@ -78,7 +78,6 @@ function addLights(scene) {
 
 function animateScene(scene, camera, lights) { 
   return function () {
-    updateColors();
     var timer = Date.now() * 0.0002;
     camera.position.x = Math.cos(timer) * z;
     camera.position.z = Math.sin(timer) * z;
@@ -86,61 +85,4 @@ function animateScene(scene, camera, lights) {
     lights.position.z = Math.sin(timer);
     camera.lookAt(scene.position);
   };
-}
-
-function updateColors() {
-  if (!links.length) return;
-
-  // first calculate avg link length:
-  var minLength = Number.POSITIVE_INFINITY, maxLength = 0;
-  var link;
-  var avgDistance = 0;
-  for (var i = 0; i < links.length; ++i) {
-    link = links[i];
-
-    var pos = layout.getLinkPosition(link.id);
-    var from = pos.from;
-    var to = pos.to;
-    link.distance = Math.sqrt((from.x - to.x) * (from.x - to.x) + (from.y - to.y) * (from.y - to.y) + (from.z - to.z) * (from.z - to.z));
-    avgDistance += link.distance;
-
-    if (link.distance < minLength) minLength = link.distance;
-    if (link.distance > maxLength) maxLength = link.distance;
-  }
-
-  avgDistance /= links.length;
-
-  for (i = 0; i < links.length; ++i) {
-    link = links[i];
-    var dt = link.distance - avgDistance;
-    var hue = 90 * (dt * 4/(avgDistance) + 1);
-    hue = Math.min(Math.max(hue, 0), 180);
-    var c = hsbToRgb(hue, 100, 100);
-    link.color.r = c.r;
-    link.color.g = c.g;
-    link.color.b = c.b;
-  }
-}
-
-function hsbToRgb(h, s, b){
-  var r, g;
-  var br = Math.round(b / 100 * 255);
-  if (s === 0){
-    r = br; g =  br; b = br;
-  } else {
-    var hue = h % 360;
-    var f = hue % 60;
-    var p = Math.round((b * (100 - s)) / 10000 * 255);
-    var q = Math.round((b * (6000 - s * f)) / 600000 * 255);
-    var t = Math.round((b * (6000 - s * (60 - f))) / 600000 * 255);
-    switch(Math.floor(hue / 60)){
-      case 0: r = br; g = t; b = p; break;
-      case 1: r = q; g = br; b = p; break;
-      case 2: r = p; g = br; b = t; break;
-      case 3: r = p; g =  q; b = br; break;
-      case 4: r = t; g = p; b = br; break;
-      case 5: r = br; g =  p; b = q; break;
-    }
-  }
-  return {r : r/255, g: g/255, b: b/255};
 }

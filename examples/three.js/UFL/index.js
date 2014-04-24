@@ -6,7 +6,11 @@ module.exports.main = function () {
 };
 
 function renderGraph(graph) {
-  var renderer = require('ngraph.three')(graph);
+  var timeStep = parseFloat(query.t);
+  if (!timeStep || timeStep <= 0) {
+    timeStep = 5;
+  }
+  var renderer = require('ngraph.three')(graph, { physicsSettings: { timeStep: timeStep}});
   var scene = renderer.scene;
   var lights = addLights(scene);
   var camera = renderer.camera;
@@ -52,7 +56,7 @@ function getNumber(string, defaultValue) {
 function nodeUI(node) {
   var nodeGeometry = new THREE.SphereGeometry(4);
   var nodeMaterial = new THREE.MeshPhongMaterial({
-    color: 0xFF0100
+    color: 0x00BFFF
   });
   return new THREE.Mesh(nodeGeometry, nodeMaterial);
 }

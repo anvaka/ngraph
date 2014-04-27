@@ -9,6 +9,7 @@ This visualization shows graphs from Tim Davis and Yifan Hu collection of
 * [HB/494_bus - Slow Motion](http://anvaka.github.io/ngraph/examples/three.js/UFL/index.html?z=700&t=1)
 * [HB/gre_343](http://anvaka.github.io/ngraph/examples/three.js/UFL/index.html?z=700&t=20&url=http://s3.amazonaws.com/yasiv_uf/out/HB/gre_343/index.js)
 * [HB/gre_343 - Slow Motion](http://anvaka.github.io/ngraph/examples/three.js/UFL/index.html?z=700&t=2&url=http://s3.amazonaws.com/yasiv_uf/out/HB/gre_343/index.js)
+* [HB/can_161 - Slow Motion](http://anvaka.github.io/ngraph/examples/three.js/UFL/index.html?z=700&t=2&url=http://s3.amazonaws.com/yasiv_uf/out/HB/can_161/index.js)
 
 # Feedback
 

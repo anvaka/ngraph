@@ -30,6 +30,9 @@ your project.
 I'm not abandoning vivagraph by any means. Quite the opposite, this repository is
 a next step of evolution.
 
+# How to run examples locally?
+`ngraph` is powered by `npm`.  All examples require a `bundle.js` file, which is produced by executing `npm start` command inside folder with example. Make sure you have all modules installed inside a folder (`npm install` inside folder with example will download all dependencies). 
+
 # license
 
 MIT

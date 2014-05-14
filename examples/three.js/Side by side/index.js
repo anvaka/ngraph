@@ -7,9 +7,10 @@ module.exports.main = function () {
     container: document.getElementById('threeContainer')
   });
 
+  var THREE = threeGraphics.THREE;
   // tell it we want custom UI:
-  threeGraphics.createNodeUI(require('./lib/threeNode'))
-               .createLinkUI(require('./lib/threeLink'));
+  threeGraphics.createNodeUI(require('./lib/threeNode')(THREE))
+               .createLinkUI(require('./lib/threeLink')(THREE));
 
   var scene = threeGraphics.scene;
   var directionalLight = new THREE.DirectionalLight(0xffffff);

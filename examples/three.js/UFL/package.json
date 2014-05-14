@@ -4,7 +4,7 @@
   },
   "dependencies": {
     "ngraph.generators": "~0.0",
-    "ngraph.three": "~0.0",
+    "ngraph.three": "~0.0.5",
     "query-string": "~0.1.1",
     "ngraph.serialization": "0.0.3"
   },

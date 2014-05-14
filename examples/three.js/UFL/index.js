@@ -1,4 +1,5 @@
 var query, z, layout;
+var THREE;
 
 module.exports.main = function () {
   query = require('query-string').parse(window.location.search.substring(1));
@@ -10,13 +11,25 @@ function renderGraph(graph) {
   if (!timeStep || timeStep <= 0) {
     timeStep = 5;
   }
-  var renderer = require('ngraph.three')(graph, { physicsSettings: { timeStep: timeStep}});
+  var renderer = require('ngraph.three')(graph, {
+    physicsSettings: { timeStep: timeStep},
+    interactive: true
+  });
+
+  THREE = renderer.THREE;
+
   var scene = renderer.scene;
   var lights = addLights(scene);
   var camera = renderer.camera;
   z = getNumber(query.z, 400);
 
-  renderer.onFrame(animateScene(scene, camera, lights));
+  var controls = renderer.controls;
+  controls.rotateSpeed = 3;
+	controls.zoomSpeed = 4;
+	controls.panSpeed = 3;
+
+  setupScene(scene, camera, lights);
+
   renderer.createNodeUI(nodeUI).createLinkUI(linkUI);
 
   layout = renderer.layout;
@@ -80,13 +93,11 @@ function addLights(scene) {
   return light;
 }
 
-function animateScene(scene, camera, lights) { 
-  return function () {
-    var timer = Date.now() * 0.0002;
-    camera.position.x = Math.cos(timer) * z;
-    camera.position.z = Math.sin(timer) * z;
-    lights.position.x = Math.cos(timer);
-    lights.position.z = Math.sin(timer);
-    camera.lookAt(scene.position);
-  };
+function setupScene(scene, camera, lights) { 
+  var timer = Date.now() * 0.0002;
+  camera.position.x = Math.cos(timer) * z;
+  camera.position.z = Math.sin(timer) * z;
+  lights.position.x = Math.cos(timer);
+  lights.position.z = Math.sin(timer);
+  camera.lookAt(scene.position);
 }

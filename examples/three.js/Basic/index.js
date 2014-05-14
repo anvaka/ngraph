@@ -2,11 +2,11 @@ module.exports.main = function () {
   var query = require('query-string').parse(window.location.search.substring(1));
   var graph = getGraphFromQueryString(query);
   var createThree = require('ngraph.three');
-  var graphics = createThree(graph);
+  var graphics = createThree(graph, {interactive: true});
 
   graphics.run(); // begin animation loop:
   graphics.camera.position.z = getNumber(query.z, 400);
-}
+};
 
 function getGraphFromQueryString(query) {
   var graphGenerators = require('ngraph.generators');

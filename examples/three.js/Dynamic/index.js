@@ -1,7 +1,7 @@
 module.exports.main = function () {
   var graph = require('ngraph.graph')();
   var threeGraphics = require('ngraph.three')(graph, { interactive: false });
-
+  var THREE = threeGraphics.THREE;
 
   // tell graphics we want custom UI
   threeGraphics.createNodeUI(function () {
@@ -38,7 +38,7 @@ module.exports.main = function () {
     camera.position.z = Math.sin(timer) * 1500;
     camera.lookAt(scene.position);
   }
-}
+};
 
 var niceColors = [
  0x1f77b4, 0xaec7e8,

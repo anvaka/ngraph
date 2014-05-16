@@ -87,8 +87,6 @@ function linkUI(link) {
 }
 
 function addLights(scene) {
-  var ambient = new THREE.AmbientLight(0x101010);
-  scene.add(ambient);
   var light = new THREE.DirectionalLight(0xffffff);
   scene.add(light);
 

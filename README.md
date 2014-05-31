@@ -14,7 +14,7 @@ Currently this library is work in progress. I will add demos as quickly as I can
 * [Integration with Gephi](https://github.com/anvaka/ngraph/tree/master/examples/storage/gephi)
 
 # Video
-Here is an introduction video to this library: [Browserify Monolith](https://www.youtube.com/watch?v=Kp377p-NSFc)
+Here is an introduction video to this library: [Browserify Monolith](https://www.youtube.com/watch?v=Kp377p-NSFc). This library has also appeared in TEDx talk at Stanford: [The Beauty I See in Algebra](https://www.youtube.com/watch?v=8CX-Q0gtSp8) by Margot Gerritsen
 
 # Why?
 I built [vivagraph](https://github.com/anvaka/VivaGraphJS) to learn javascript two years ago.

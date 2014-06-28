@@ -12,13 +12,11 @@ Click any of these images to view interactive animation:
 <a href='http://anvaka.github.io/ngraph/examples/three.js/Basic/index.html?graph=circularLadder'><img alt='circularLadder, length=10' src='https://raw2.github.com/anvaka/ngraph/master/examples/three.js/Basic/assets/circularLadder.png' height='128px'></img></a>
 <a href='http://anvaka.github.io/ngraph/examples/three.js/Basic/index.html?graph=complete&n=5'><img alt='complete, n=5' src='https://raw2.github.com/anvaka/ngraph/master/examples/three.js/Basic/assets/complete6.png' height='128px'></img></a>
 
-You can control camera position by using "Space Ship" mechanics:
+You can control camera position by using mouse:
 
-* `WASD` move,
-* `R|F` up | down,
-* `Q|E` roll,
-* `up|down` pitch,
-* `left|right` yaw
+* Mouse wheel to zoom in/zoom out
+* Left mouse button to rotate
+* Right mouse button to pan
 
 **Note:** WebGL is required for best performance
 

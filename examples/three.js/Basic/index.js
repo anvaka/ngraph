@@ -15,5 +15,6 @@ function getGraphFromQueryString(query) {
 }
 
 function getNumber(string, defaultValue) {
-  return parseInt(string, 10) || defaultValue || 10;
+  var number = parseFloat(string);
+  return (typeof number === 'number') && !isNaN(number) ? number : (defaultValue || 10);
 }

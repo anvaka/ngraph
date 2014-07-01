@@ -18,6 +18,8 @@ You can control camera position by using mouse:
 * Left mouse button to rotate
 * Right mouse button to pan
 
+All graphs from graphs generators are available. Click any image in the [ngraph.generators](https://github.com/anvaka/ngraph.generators#graph-generators) repository to see interactive version.
+
 **Note:** WebGL is required for best performance
 
 # How does this work

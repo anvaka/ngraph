@@ -33,6 +33,12 @@ a next step of evolution.
 # How to run examples locally?
 `ngraph` is powered by `npm`.  All examples require a `bundle.js` file, which is produced by executing `npm start` command inside folder with example. Make sure you have all modules installed inside a folder (`npm install` inside folder with example will download all dependencies). 
 
+Looking for alternatives?
+-------------------------
+
+I'm trying to put up a list of all known graph drawing libraries.
+Please [find it here](http://anvaka.github.io/graph-drawing-libraries/#/all)
+
 # license
 
 MIT

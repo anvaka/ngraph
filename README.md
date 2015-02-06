@@ -13,6 +13,9 @@ Currently this library is work in progress. I will add demos as quickly as I can
 * [Rendering 3D graphs](https://github.com/anvaka/ngraph/tree/master/examples/three.js)
 * [Integration with Gephi](https://github.com/anvaka/ngraph/tree/master/examples/storage/gephi)
 
+[VivaGraph](https://github.com/anvaka/VivaGraphJS), one of the [fastest](https://www.youtube.com/watch?v=Ax7KSQZ0_hk) graph drawing libraries is now [constructed](https://github.com/anvaka/VivaGraphJS/blob/master/package.json) from ngraph modules.
+
+
 # Video
 Here is an introduction video to this library: [Browserify Monolith](https://www.youtube.com/watch?v=Kp377p-NSFc). This library has also appeared in TEDx talk at Stanford: [The Beauty I See in Algebra](https://www.youtube.com/watch?v=8CX-Q0gtSp8) by Margot Gerritsen
 

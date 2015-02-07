@@ -3,7 +3,6 @@
 * Implement edge bundling
 * Clustering: http://arxiv.org/pdf/0803.0476v2.pdf
 * Force Atlas 2: https://github.com/anvaka/VivaGraphJS/issues/70
-* Dot files serializer `to`.
 * Dot files renderer
 * Hierarchical layout: https://github.com/anvaka/VivaGraphJS/issues/20
 

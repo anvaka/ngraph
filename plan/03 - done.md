@@ -1,3 +1,6 @@
+# Algorithm
+* Dot files serializer [from](https://github.com/anvaka/ngraph.fromdot)
+
 # Chore
 * Update README file for [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout) - Done. Repo has updated readme.
 * Update README file for [ngraph.forcelayout3d](https://github.com/anvaka/ngraph.forcelayout3d) - Done. Repo has updated readme.

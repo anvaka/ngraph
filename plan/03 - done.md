@@ -1,5 +1,8 @@
-# Algorithm
-* Dot files serializer [from](https://github.com/anvaka/ngraph.fromdot)
+# Serialization
+* Dot files serializer [from](https://github.com/anvaka/ngraph.fromdot) [to](https://github.com/anvaka/ngraph.todot)
+* (Gephi) `gexf` file - [Source](https://github.com/anvaka/ngraph.gexf); [Demo](https://github.com/anvaka/ngraph/tree/master/examples/storage/gephi)
+* [Binary format](https://github.com/anvaka/ngraph.tobinary) - space-efficient
+format for large graphs. E.g. 5 million edges, 1 million nodes requires only 23 MB of space.
 
 # Chore
 * Update README file for [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout) - Done. Repo has updated readme.
@@ -8,11 +11,10 @@
 * Update README file for [ngraph.generators](https://github.com/anvaka/ngraph.generators) - Done. Repo has updated readme.
 * Update README file for [ngraph.physics.simulator](https://github.com/anvaka/ngraph.physics.simulator) - Done. Repo has updated readme.
 
-
 # Gephi
-* gexf file parser - [results](https://github.com/anvaka/ngraph/tree/master/examples/storage/gephi)
 
 # Three.js
+* Fast graph renderer based on low level ShaderMaterial: [ngraph.pixel](https://github.com/anvaka/ngraph.pixel)
 * Show how to render graph in 3D - [results](https://github.com/anvaka/ngraph/tree/master/examples/three.js)
 * Implement 3d force based layout - [results](https://github.com/anvaka/ngraph.forcelayout3d)
 * Implement 3d quad tree - [results](https://github.com/anvaka/ngraph.forcelayout3d)

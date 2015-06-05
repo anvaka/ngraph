@@ -1,8 +1,20 @@
 # Serialization
-* Dot files serializer [from](https://github.com/anvaka/ngraph.fromdot) [to](https://github.com/anvaka/ngraph.todot)
+* Dot files serializer [from](https://github.com/anvaka/ngraph.fromdot)/[to](https://github.com/anvaka/ngraph.todot)
 * (Gephi) `gexf` file - [Source](https://github.com/anvaka/ngraph.gexf); [Demo](https://github.com/anvaka/ngraph/tree/master/examples/storage/gephi)
 * [Binary format](https://github.com/anvaka/ngraph.tobinary) - space-efficient
 format for large graphs. E.g. 5 million edges, 1 million nodes requires only 23 MB of space.
+
+# Offline layout
+Sometimes doing layout in the browser is not feasible (e.g. the graph is too large
+to achive decent performance). In that case we can compute layout offline and
+provide static positions to the browser.
+
+* [ngraph.offline.layout](https://github.com/anvaka/ngraph.offline.layout) is an
+npm module to perform such layout. If this module is too slow, you can also
+try:
+* [ngraph.native](https://github.com/anvaka/ngraph.native) which is fully implemented
+in C++ and is 9x faster thant javsript version.
+
 
 # Chore
 * Update README file for [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout) - Done. Repo has updated readme.

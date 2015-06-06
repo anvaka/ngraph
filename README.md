@@ -7,14 +7,42 @@ how to use some of them or build your own.
 # What is available?
 Currently this library is work in progress. I will add demos as quickly as I can.
 
+## Serialization
+* Dot files serializer [from](https://github.com/anvaka/ngraph.fromdot)/[to](https://github.com/anvaka/ngraph.todot)
+* (Gephi) `gexf` file - [Source](https://github.com/anvaka/ngraph.gexf); [Demo](https://github.com/anvaka/ngraph/tree/master/examples/storage/gephi)
+* [Binary format](https://github.com/anvaka/ngraph.tobinary) - space-efficient
+format for large graphs. E.g. 5 million edges, 1 million nodes requires only 23 MB of space.
+
+## Offline layout
+Sometimes doing layout in the browser is not feasible (e.g. the graph is too large
+to achive decent performance). In that case we can compute layout offline and
+provide static positions to the browser.
+
+* [ngraph.offline.layout](https://github.com/anvaka/ngraph.offline.layout) is an
+npm module to perform such layout. If this module is too slow, you can also
+try:
+* [ngraph.native](https://github.com/anvaka/ngraph.native) which is fully implemented
+in C++ and is 9x faster thant javsript version.
+
+## Interactive renderer
+
+This is set of libraries that use ngraph modules to provide rendering in the
+browser:
+
+* [VivaGraph](https://github.com/anvaka/VivaGraphJS), one of the [fastest](https://www.youtube.com/watch?v=Ax7KSQZ0_hk) graph drawing libraries is now [constructed](https://github.com/anvaka/VivaGraphJS/blob/master/package.json)
+from ngraph modules. It is an opinionated set of modules packed together.
+* [ngraph.pixel](https://github.com/anvaka/ngraph.pixel) - Fast 3D graph renderer
+based on low level ShaderMaterial from three.js
+
+# Building your own modules
+
+This repositry has multiple examples how to build your own module which suits
+your needs best:
+
 * [Rendering graphs with PIXI.js](https://github.com/anvaka/ngraph/tree/master/examples/pixi.js)
 * [Rendering graphs with fabric.js](https://github.com/anvaka/ngraph/tree/master/examples/fabric.js)
 * [Rendering graph from terminal](https://github.com/anvaka/ngraph/tree/master/examples/terminal)
 * [Rendering 3D graphs](https://github.com/anvaka/ngraph/tree/master/examples/three.js)
-* [Integration with Gephi](https://github.com/anvaka/ngraph/tree/master/examples/storage/gephi)
-
-[VivaGraph](https://github.com/anvaka/VivaGraphJS), one of the [fastest](https://www.youtube.com/watch?v=Ax7KSQZ0_hk) graph drawing libraries is now [constructed](https://github.com/anvaka/VivaGraphJS/blob/master/package.json) from ngraph modules.
-
 
 # Video
 Here is an introduction video to this library: [Browserify Monolith](https://www.youtube.com/watch?v=Kp377p-NSFc). This library has also appeared in TEDx talk at Stanford: [The Beauty I See in Algebra](https://www.youtube.com/watch?v=8CX-Q0gtSp8) by Margot Gerritsen

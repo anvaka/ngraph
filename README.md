@@ -29,10 +29,16 @@ in C++ and is 9x faster thant javsript version.
 This is set of libraries that use ngraph modules to provide rendering in the
 browser:
 
-* [VivaGraph](https://github.com/anvaka/VivaGraphJS), one of the [fastest](https://www.youtube.com/watch?v=Ax7KSQZ0_hk) graph drawing libraries is now [constructed](https://github.com/anvaka/VivaGraphJS/blob/master/package.json)
+* [VivaGraph](https://github.com/anvaka/VivaGraphJS), one of the [fastest](https://www.youtube.com/watch?v=Ax7KSQZ0_hk)
+graph drawing libraries is now [constructed](https://github.com/anvaka/VivaGraphJS/blob/master/package.json)
 from ngraph modules. It is an opinionated set of modules packed together.
 * [ngraph.pixel](https://github.com/anvaka/ngraph.pixel) - Fast 3D graph renderer
 based on low level ShaderMaterial from three.js
+
+## Other
+
+There are plenty modules within ngraph family: [this npm search](https://www.npmjs.com/search?q=ngraph)
+shows most of them
 
 # Building your own modules
 

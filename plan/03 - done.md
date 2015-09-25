@@ -30,6 +30,7 @@ in C++ and is 9x faster thant javsript version.
 * Show how to render graph in 3D - [results](https://github.com/anvaka/ngraph/tree/master/examples/three.js)
 * Implement 3d force based layout - [results](https://github.com/anvaka/ngraph.forcelayout3d)
 * Implement 3d quad tree - [results](https://github.com/anvaka/ngraph.forcelayout3d)
+* Show how to render huge graphs with particles - [results](https://github.com/anvaka/pm)
 
 
 # Fabric.js

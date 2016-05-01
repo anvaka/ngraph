@@ -35,6 +35,16 @@ from ngraph modules. It is an opinionated set of modules packed together.
 * [ngraph.pixel](https://github.com/anvaka/ngraph.pixel) - Fast 3D graph renderer
 based on low level ShaderMaterial from three.js
 
+## Clusters/Community Detection
+
+* [ngraph.cw](https://github.com/anvaka/ngraph.cw) - fast community detection algorithm, based on labale propagation
+* [ngraph.louvain](https://github.com/anvaka/ngraph.louvain) - another state of the art algorithm, uses modularity optimization.
+
+## Graph metrics
+
+* [ngraph.pagerank](https://github.com/anvaka/ngraph.pagerank) - computes PageRank of a graph.
+* [ngraph.hits](https://github.com/anvaka/ngraph.hits) - alternative to PageRank. Implements Hubs and authorities (HITS) algorithm
+
 ## Other
 
 There are plenty modules within ngraph family: [this npm search](https://www.npmjs.com/search?q=ngraph)

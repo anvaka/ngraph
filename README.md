@@ -37,7 +37,7 @@ based on low level ShaderMaterial from three.js
 
 ## Clusters/Community Detection
 
-* [ngraph.cw](https://github.com/anvaka/ngraph.cw) - fast community detection algorithm, based on labale propagation
+* [ngraph.cw](https://github.com/anvaka/ngraph.cw) - fast community detection algorithm, based on label propagation
 * [ngraph.louvain](https://github.com/anvaka/ngraph.louvain) - another state of the art algorithm, uses modularity optimization.
 
 ## Graph metrics

@@ -13,7 +13,7 @@ provide static positions to the browser.
 npm module to perform such layout. If this module is too slow, you can also
 try:
 * [ngraph.native](https://github.com/anvaka/ngraph.native) which is fully implemented
-in C++ and is 9x faster thant javsript version.
+in C++ and is 9x faster than javasript version.
 
 
 # Chore
@@ -28,8 +28,8 @@ in C++ and is 9x faster thant javsript version.
 # Three.js
 * Fast graph renderer based on low level ShaderMaterial: [ngraph.pixel](https://github.com/anvaka/ngraph.pixel)
 * Show how to render graph in 3D - [results](https://github.com/anvaka/ngraph/tree/master/examples/three.js)
-* Implement 3d force based layout - [results](https://github.com/anvaka/ngraph.forcelayout3d)
-* Implement 3d quad tree - [results](https://github.com/anvaka/ngraph.forcelayout3d)
+* Implement 3D force based layout - [results](https://github.com/anvaka/ngraph.forcelayout3d)
+* Implement 3D quad tree - [results](https://github.com/anvaka/ngraph.forcelayout3d)
 * Show how to render huge graphs with particles - [results](https://github.com/anvaka/pm)
 
 

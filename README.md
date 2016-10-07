@@ -68,7 +68,7 @@ I built [vivagraph](https://github.com/anvaka/VivaGraphJS) to learn javascript t
 I definitely learned a lot and vivagraph itself is a pretty decent graph drawing library.
 
 However vivagraph is built in monolithic way. For example, if I wanted to add new streaming
-traversal API I could not justify it inside monolithical "graph drawing" library.
+traversal API I could not justify it inside monolithic "graph drawing" library.
 
 Ngraph opens huge possibilities, with each module being available on [npm](https://npmjs.org/).
 Now you can pick just what you need and swap out parts which are not relevant to

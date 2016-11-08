@@ -3,11 +3,11 @@
     "start": "node_modules/.bin/browserify -s ngraph index.js > bundle.js"
   },
   "dependencies": {
-    "ngraph.forcelayout": "0.0.4",
-    "ngraph.generators": "0.0.2",
-    "ngraph.physics.simulator": "0.0.4"
+    "ngraph.forcelayout": "0.1.2",
+    "ngraph.generators": "0.0.17",
+    "ngraph.physics.simulator": "0.1.1"
   },
   "devDependencies": {
-    "browserify": "~3.18.0"
+    "browserify": "^13.1.1"
   }
 }

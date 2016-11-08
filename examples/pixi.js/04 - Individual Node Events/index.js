@@ -19,14 +19,13 @@ module.exports.main = function () {
 }
 
 function createLayout(graph) {
-  var layout = require('ngraph.forcelayout'),
-      physics = require('ngraph.physics.simulator');
+  var layout = require('ngraph.forcelayout');
 
-  return layout(graph, physics({
+  return layout(graph, {
           springLength: 30,
           springCoeff: 0.0008,
           dragCoeff: 0.01,
           gravity: -1.2,
           theta: 1
-        }));
+        });
 }

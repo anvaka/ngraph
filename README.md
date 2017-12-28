@@ -22,7 +22,7 @@ provide static positions to the browser.
 npm module to perform such layout. If this module is too slow, you can also
 try:
 * [ngraph.native](https://github.com/anvaka/ngraph.native) which is fully implemented
-in C++ and is 9x faster thant javasript version.
+in C++ and is 9x faster thant javascript version.
 
 ## Interactive renderer
 

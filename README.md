@@ -54,7 +54,7 @@ shows most of them
 
 # Building your own modules
 
-This repositry has multiple examples how to build your own module which suits
+This repository has multiple examples how to build your own module which suits
 your needs best:
 
 * [Rendering graphs with PIXI.js](https://github.com/anvaka/ngraph/tree/master/examples/pixi.js)

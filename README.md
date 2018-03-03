@@ -5,7 +5,9 @@ or on the server side. This repository is a collection of examples, which show
 how to use some of them or build your own.
 
 # What is available?
-Currently this library is work in progress. I will add demos as quickly as I can.
+
+At the core of the library is [ngraph.graph](https://github.com/anvaka/ngraph.graph)
+package, which simply represents a graph data structure.
 
 ## Serialization
 * Dot files serializer [from](https://github.com/anvaka/ngraph.fromdot)/[to](https://github.com/anvaka/ngraph.todot)

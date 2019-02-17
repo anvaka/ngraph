@@ -52,6 +52,10 @@ based on low level ShaderMaterial from three.js
 There are plenty modules within ngraph family: [this npm search](https://www.npmjs.com/search?q=ngraph)
 shows most of them
 
+## Playground
+
+You can quickly start a new project with core ngraph modules using this template project: https://github.com/anvaka/graph-start
+
 # Building your own modules
 
 This repository has multiple examples how to build your own module which suits

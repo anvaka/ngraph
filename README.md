@@ -67,7 +67,7 @@ your needs best:
 * [Rendering 3D graphs](https://github.com/anvaka/ngraph/tree/master/examples/three.js)
 
 # Video
-Here is an introduction video to this library: [Browserify Monolith](https://www.youtube.com/watch?v=Kp377p-NSFc). This library has also appeared in TEDx talk at Stanford: [The Beauty I See in Algebra](https://www.youtube.com/watch?v=8CX-Q0gtSp8) by Margot Gerritsen
+Here is an introduction video to this library: [Browserify Monolith](https://www.youtube.com/watch?v=Kp377p-NSFc). This library has also appeared in TEDx talk at Stanford: [The Beauty I See in Algebra](https://www.youtube.com/watch?v=8CX-Q0gtSp8) by Margot Gerritsen. It has also appeared in this TEDx talk [How can visualizing our personal data empower our health?](https://www.youtube.com/watch?v=90y_iAHyO0w) by Amina Qutub
 
 # Why?
 I built [vivagraph](https://github.com/anvaka/VivaGraphJS) to learn javascript two years ago.

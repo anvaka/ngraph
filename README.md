@@ -9,6 +9,33 @@ how to use some of them or build your own.
 At the core of the library is [ngraph.graph](https://github.com/anvaka/ngraph.graph)
 package, which simply represents a graph data structure.
 
+## Interactive renderer
+
+This is set of libraries that use ngraph modules to provide rendering in the
+browser:
+
+* [VivaGraph](https://github.com/anvaka/VivaGraphJS), one of the [fastest](https://www.youtube.com/watch?v=Ax7KSQZ0_hk)
+graph drawing libraries is now [constructed](https://github.com/anvaka/VivaGraphJS/blob/master/package.json)
+from ngraph modules. It is an opinionated set of modules packed together.
+* [ngraph.pixel](https://github.com/anvaka/ngraph.pixel) - Fast 3D graph renderer
+based on low level ShaderMaterial from three.js
+
+## Algorithms
+
+* [ngraph.path](https://github.com/anvaka/ngraph.path) - extremely fast path finding on graphs
+* [ngraph.kruskal](https://github.com/anvaka/ngraph.kruskal) - minimum spanning tree algorithm
+
+## Clusters/Community Detection
+
+* [ngraph.cw](https://github.com/anvaka/ngraph.cw) - fast community detection algorithm, based on label propagation
+* [ngraph.louvain](https://github.com/anvaka/ngraph.louvain) - another state of the art algorithm, uses modularity optimization.
+
+## Graph metrics
+
+* [ngraph.pagerank](https://github.com/anvaka/ngraph.pagerank) - computes PageRank of a graph.
+* [ngraph.hits](https://github.com/anvaka/ngraph.hits) - alternative to PageRank. Implements Hubs and authorities (HITS) algorithm
+* [ngraph.centrality](https://github.com/anvaka/ngraph.centrality) - computation of centrality.
+
 ## Serialization
 * Dot files serializer [from](https://github.com/anvaka/ngraph.fromdot)/[to](https://github.com/anvaka/ngraph.todot)
 * (Gephi) `gexf` file - [Source](https://github.com/anvaka/ngraph.gexf); [Demo](https://github.com/anvaka/ngraph/tree/master/examples/storage/gephi)
@@ -26,26 +53,6 @@ try:
 * [ngraph.native](https://github.com/anvaka/ngraph.native) which is fully implemented
 in C++ and is 9x faster thant javascript version.
 
-## Interactive renderer
-
-This is set of libraries that use ngraph modules to provide rendering in the
-browser:
-
-* [VivaGraph](https://github.com/anvaka/VivaGraphJS), one of the [fastest](https://www.youtube.com/watch?v=Ax7KSQZ0_hk)
-graph drawing libraries is now [constructed](https://github.com/anvaka/VivaGraphJS/blob/master/package.json)
-from ngraph modules. It is an opinionated set of modules packed together.
-* [ngraph.pixel](https://github.com/anvaka/ngraph.pixel) - Fast 3D graph renderer
-based on low level ShaderMaterial from three.js
-
-## Clusters/Community Detection
-
-* [ngraph.cw](https://github.com/anvaka/ngraph.cw) - fast community detection algorithm, based on label propagation
-* [ngraph.louvain](https://github.com/anvaka/ngraph.louvain) - another state of the art algorithm, uses modularity optimization.
-
-## Graph metrics
-
-* [ngraph.pagerank](https://github.com/anvaka/ngraph.pagerank) - computes PageRank of a graph.
-* [ngraph.hits](https://github.com/anvaka/ngraph.hits) - alternative to PageRank. Implements Hubs and authorities (HITS) algorithm
 
 ## Other
 

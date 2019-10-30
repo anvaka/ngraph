@@ -44,7 +44,7 @@ format for large graphs. E.g. 5 million edges, 1 million nodes requires only 23 
 
 ## Offline layout
 Sometimes doing layout in the browser is not feasible (e.g. the graph is too large
-to achive decent performance). In that case we can compute layout offline and
+to achieve decent performance). In that case we can compute layout offline and
 provide static positions to the browser.
 
 * [ngraph.offline.layout](https://github.com/anvaka/ngraph.offline.layout) is an

@@ -42,10 +42,14 @@ based on low level ShaderMaterial from three.js
 * [Binary format](https://github.com/anvaka/ngraph.tobinary) - space-efficient
 format for large graphs. E.g. 5 million edges, 1 million nodes requires only 23 MB of space.
 
-## Offline layout
-Sometimes doing layout in the browser is not feasible (e.g. the graph is too large
-to achieve decent performance). In that case we can compute layout offline and
-provide static positions to the browser.
+## Graph layout
+
+* [ngraph.forcelayout](https://github.com/anvaka/ngraph.forcelayout) performs force
+based layout in arbitrary dimensions space (2D, 3D, 4D, and so on).
+
+When layout in the browser is not feasible (e.g. the graph is too large
+to achieve decent performance) we can compute layout offline and
+provide static positions to the browser:
 
 * [ngraph.offline.layout](https://github.com/anvaka/ngraph.offline.layout) is an
 npm module to perform such layout. If this module is too slow, you can also

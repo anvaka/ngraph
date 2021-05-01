@@ -1,5 +1,8 @@
 # Algorithms
 * Implement graph metrics calculation
+  - Jaccard Similarity - https://github.com/anvaka/ngraph.jaccard
+  - Adamic-Adar index
+  - Katz index
 * Implement edge bundling
 * Clustering: http://arxiv.org/pdf/0803.0476v2.pdf
 * Force Atlas 2: https://github.com/anvaka/VivaGraphJS/issues/70
